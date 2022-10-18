@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SEG2105_Group20_Project</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="admin">Admin</string>
+    <string name="dasheats">DashEats</string>
+    <string name="dash_eats">Dash Eats</string>
+    <string name="mealer">Mealer</string>
+    <string name="enter_e_mail_address">Enter E-mail Address</string>
+    <string name="enter_password">Enter Password</string>
 </resources>
