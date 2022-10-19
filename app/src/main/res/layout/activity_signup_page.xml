@@ -7,12 +7,13 @@
     android:background="@android:color/holo_purple"
     tools:context=".SignupPage">
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signuptitle"
         android:text="Sign Up"
-        android:textSize="35sp"
+        android:textSize="35dp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center"
@@ -98,15 +99,18 @@
         android:inputType="textPassword"/>
 
     <Button
+        android:id="@+id/signupbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/signupbtn"
-        android:text="Sign up"
-        android:textSize="25dp"
         android:layout_below="@id/repassword"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/material_dynamic_secondary20"
-        android:layout_margin="20sp" />
+        android:text="Sign up"
+        android:textSize="25dp" />
 
 
 </RelativeLayout>
