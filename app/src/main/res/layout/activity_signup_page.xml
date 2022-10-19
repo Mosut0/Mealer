@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/signuptitle"
         android:text="Sign Up"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center"
@@ -106,7 +106,7 @@
         android:layout_below="@id/repassword"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/material_dynamic_secondary20"
-        android:layout_margin="20dp" />
+        android:layout_margin="20sp" />
 
 
 </RelativeLayout>
