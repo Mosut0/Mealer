@@ -8,4 +8,13 @@
     <string name="mealer">Mealer</string>
     <string name="enter_e_mail_address">Enter E-mail Address</string>
     <string name="enter_password">Enter Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="retype_password">Retype Password</string>
+    <string name="welcome_you_are_logged_in_as">Welcome! You are logged in as</string>
+    <string name="welcome_nyou_are_logged_in_as">Welcome! \nYou are logged in as</string>
+    <string name="log_out">Log Out</string>
+    <string name="back">Back</string>
 </resources>

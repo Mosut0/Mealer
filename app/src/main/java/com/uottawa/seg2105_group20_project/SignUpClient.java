@@ -12,14 +12,13 @@ import android.widget.Toast;
 import android.view.MenuItem;
 import android.widget.PopupMenu;
 
-import com.google.android.material.button.MaterialButton;
-
-public class SignupPage extends AppCompatActivity {
+//Class for sign up client page
+public class SignUpClient extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_signup_page);
+        setContentView(layout.activity_signup_client);
 
         EditText firstName = (EditText) findViewById(id.firstname);
 
@@ -41,18 +40,18 @@ public class SignupPage extends AppCompatActivity {
 
 
                 if (pwd != repwd) {
-                    Toast.makeText(SignupPage.this, "Password do not match", Toast.LENGTH_SHORT);
+                    Toast.makeText(SignUpClient.this, "Password do not match", Toast.LENGTH_SHORT);
                     password.setText(null);
                     retypePassword.setText(null);
                 } else {
                     //Save User info to database
 
                     //Display successful signup message
-                    Toast.makeText(SignupPage.this, "Signup Successful!", Toast.LENGTH_SHORT);
+                    Toast.makeText(SignUpClient.this, "Signup Successful!", Toast.LENGTH_SHORT);
 
                     //Ask if he wants to sign up as a client or cook
 
-                    PopupMenu popupMenu = new PopupMenu(SignupPage.this,signupButton);
+                    PopupMenu popupMenu = new PopupMenu(SignUpClient.this,signupButton);
 
                     popupMenu.getMenuInflater().inflate(menu.popup_menu, popupMenu.getMenu());
 
@@ -60,7 +59,7 @@ public class SignupPage extends AppCompatActivity {
                         
                         public boolean onMenuItemClick(MenuItem item) {
 
-                            Toast.makeText(SignupPage.this, "You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpClient.this, "You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
                             return true;
 
                         }
