@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-//Class for main login page
-public class MainActivity extends AppCompatActivity {
+//Class for admin login page
+public class LoginAdmin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
