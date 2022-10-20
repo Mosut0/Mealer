@@ -18,11 +18,10 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="package.OtherActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="package.OtherActivity" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <activity
@@ -44,11 +43,11 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="package.OtherActivity" />
+<!--            <intent-filter>-->
+<!--                <action android:name="package.OtherActivity" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <activity
@@ -57,11 +56,11 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="package.OtherActivity" />
+<!--            <intent-filter>-->
+<!--                <action android:name="package.OtherActivity" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <activity
@@ -70,11 +69,11 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="package.OtherActivity" />
+<!--            <intent-filter>-->
+<!--                <action android:name="package.OtherActivity" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <activity
@@ -83,11 +82,11 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="package.OtherActivity" />
+<!--            <intent-filter>-->
+<!--                <action android:name="package.OtherActivity" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
         </activity>
 
     </application>
