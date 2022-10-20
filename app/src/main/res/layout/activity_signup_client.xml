@@ -11,38 +11,54 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/signuptitle"
-        android:text="@string/sign_up"
+        android:id="@+id/clientSignUpTitle"
+        android:text="@string/client_sign_up"
         android:textSize="35sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center"
         android:layout_margin="25dp" />
 
+    <TextView
+        android:id="@+id/clientPersonalInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="122dp"
+        android:layout_marginEnd="398dp"
+        android:text="@string/personal_information"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
     <EditText
-        android:id="@+id/firstname"
+        android:id="@+id/clientFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/signuptitle"
+        android:layout_below="@id/clientPersonalInfoText"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#30ffffff"
         android:drawableStart="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
         android:hint="@string/first_name"
+        android:importantForAutofill="no"
+        android:inputType="text"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck"
-        android:importantForAutofill="no"
-        android:inputType="text" />
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
     <EditText
-        android:id="@+id/lastname"
+        android:id="@+id/clientLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/firstname"
+        android:layout_below="@id/clientFirstName"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -60,10 +76,10 @@
 
 
     <EditText
-        android:id="@+id/emailaddress"
+        android:id="@+id/clientEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lastname"
+        android:layout_below="@id/clientLastName"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -80,10 +96,10 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/clientPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/emailaddress"
+        android:layout_below="@id/clientEmailAddress"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -100,10 +116,10 @@
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/repassword"
+        android:id="@+id/clientRePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/clientPassword"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -119,14 +135,121 @@
         android:textColorHint="@color/white"
         tools:ignore="TextContrastCheck" />
 
+    <EditText
+        android:id="@+id/clientAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clientRePassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_house_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/address"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/clientCreditCardInfoText"
+        android:layout_width="479dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/clientAddress"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="713dp"
+        android:layout_marginEnd="300dp"
+        android:text="@string/credit_card_information"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
+
+    <EditText
+        android:id="@+id/clientCreditCardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_below="@+id/clientCreditCardInfoText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="6dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_credit_card_24"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:hint="@string/credit_card_number"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/clientExpirationDate"
+        android:layout_width="365dp"
+        android:layout_height="69dp"
+        android:layout_below="@+id/clientCreditCardInfo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="421dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/expiration_date"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck,TextFields" />
+
+    <EditText
+        android:id="@+id/clientCVV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clientCreditCardInfo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="415dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="337dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_credit_card_24"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:hint="@string/cvv"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
     <Button
-        android:id="@+id/signupbtn"
+        android:id="@+id/clientSignupBtn"
         android:layout_width="191dp"
         android:layout_height="72dp"
-        android:layout_below="@id/repassword"
+        android:layout_below="@id/clientRePassword"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="497dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/material_dynamic_secondary20"
@@ -135,7 +258,7 @@
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
-        android:id="@+id/backButtonSignup1"
+        android:id="@+id/clientBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -147,7 +270,6 @@
         android:layout_marginEnd="672dp"
         android:layout_marginBottom="36dp"
         android:text="@string/back" />
-
 
 </RelativeLayout>
 
