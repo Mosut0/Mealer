@@ -210,7 +210,7 @@
         android:background="#30ffffff"
         android:drawableStart="@drawable/ic_baseline_calendar_today_24"
         android:drawablePadding="20dp"
-        android:hint="@string/expiration_date"
+        android:hint="@string/expiration_date_mmyy"
         android:importantForAutofill="no"
         android:inputType="text"
         android:padding="20dp"

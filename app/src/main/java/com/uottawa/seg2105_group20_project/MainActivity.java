@@ -1,5 +1,7 @@
 package com.uottawa.seg2105_group20_project;
 
+import java.util.ArrayList;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,23 +21,30 @@ import com.google.firebase.database.ValueEventListener;
 //Class for main login page
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://seg2105-group20-default-rtdb.firebaseio.com");
+    protected Button adminButton, signupButton, loginButton;
+    protected EditText editLoginEmail, editLoginPassword;
+    protected DatabaseReference databaseAdmins, databaseClients, databaseCooks;
+    protected ArrayList<Client> clients;
+    protected ArrayList<Cook> cooks;
 
-    private Button adminButton;
-    private Button signupButton;
-    private Button loginButton;
+    public MainActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button adminButton = findViewById(R.id.adminButton);
-        final Button signupButton = findViewById(R.id.signupButton);
-        final Button loginButton = findViewById(R.id.loginButton);
+        adminButton = findViewById(R.id.adminButton);
+        signupButton = findViewById(R.id.signupButton);
+        loginButton = findViewById(R.id.loginButton);
 
-        final EditText loginEmailAddress = findViewById(R.id.loginEmailAddress);
-        final EditText loginPassword = findViewById(R.id.loginPassword);
+        editLoginEmail = findViewById(R.id.loginEmailAddress);
+        editLoginPassword = findViewById(R.id.loginPassword);
+
+        databaseAdmins = FirebaseDatabase.getInstance().getReference("admins");
+        databaseClients = FirebaseDatabase.getInstance().getReference("clients");
+        databaseCooks = FirebaseDatabase.getInstance().getReference("cooks");
 
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,54 +59,75 @@ public class MainActivity extends AppCompatActivity {
                 signUpClick(view);
             }
         });
-//
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                checkUserExist();
+            }
+        });
+    }
 
-                final String emailAddressEntered = loginEmailAddress.getText().toString();
+    @Override
+    protected void onStart() {
+        super.onStart();
+        databaseClients.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                clients.clear();
 
-                final String passwordEntered = loginPassword.getText().toString();
-
-                if(emailAddressEntered.isEmpty() || passwordEntered.isEmpty()){
-                    Toast.makeText(MainActivity.this,"Please enter email and password", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                            //Check if email address exists in firebase database
-                            if(snapshot.hasChild(emailAddressEntered)){
-                                //email exists in firebase database
-                                //now get the password and match it
-
-                                final String getPasswowrd = snapshot.child(emailAddressEntered).child("password").getValue(String.class);
-
-                                //Check if password also matches email in database
-                                if(getPasswowrd.equals(passwordEntered)){
-                                    loginClick(view);
-                                } else {
-                                    Toast.makeText(MainActivity.this,"Wrong Password entered", Toast.LENGTH_SHORT).show();
-                                }
-                            }else{
-                                Toast.makeText(MainActivity.this,"Wrong Email Address entered", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-
+                for(DataSnapshot postSnapshot : snapshot.getChildren()){
+                    Client client = postSnapshot.getValue(Client.class);
+                    clients.add(client);
                 }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
 
+        databaseClients.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                cooks.clear();
 
+                for(DataSnapshot postSnapshot : snapshot.getChildren()){
+                    Cook cook = postSnapshot.getValue(Cook.class);
+                    cooks.add(cook);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void checkUserExist(){
+        String email = editLoginEmail.getText().toString().trim();
+        String password = editLoginPassword.getText().toString().trim();
+        Intent intent = null;
+        boolean userExist = false;
+        for(int i = 0; i < clients.size(); i++){
+            if(clients.get(i).getEmail().trim().equals(email) && clients.get(i).getPassword().trim().equals(password)){
+                intent = new Intent(this, WelcomePage.class);
+                startActivity(intent);
+                userExist = true;
+            }
+        }
+        for(int i = 0; i < cooks.size(); i++){
+            if(cooks.get(i).getEmail().trim().equals(email) && cooks.get(i).getPassword().trim().equals(password)){
+                intent = new Intent(this, WelcomePage.class);
+                startActivity(intent);
+                userExist = true;
+            }
+        }
+        if(!userExist){
+            Toast.makeText(this, "Login Not found!", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void adminClick (View v){
@@ -105,11 +135,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signUpClick (View v) {
-        startActivity(new Intent(this, SignupRole.class));
-    }
-
-    public void loginClick (View v){
-        startActivity(new Intent(this, WelcomePage.class));
+        startActivity(new Intent(this, SignUpRole.class));
     }
 
 }

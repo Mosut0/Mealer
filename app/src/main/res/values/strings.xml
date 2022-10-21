@@ -34,4 +34,5 @@
     <string name="cvv">CVV</string>
     <string name="expiration_date">Expiration Date</string>
     <string name="add_void_cheque">Add Picture of Void Cheque</string>
+    <string name="expiration_date_mmyy">Expiration Date (MMYY)</string>
 </resources>

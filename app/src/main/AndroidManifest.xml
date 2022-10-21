@@ -52,7 +52,7 @@
         </activity>
 
         <activity
-            android:name=".SignupRole"
+            android:name=".SignUpRole"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

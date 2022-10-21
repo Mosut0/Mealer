@@ -1,34 +1,34 @@
 package com.uottawa.seg2105_group20_project;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import android.os.Bundle;
-
 //Class for welcome page
-public class WelcomePage extends AppCompatActivity {
+public class SuccessfulSignUp extends AppCompatActivity {
 
-    protected Button logOffBtn;
+    protected Button backToLoginPageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_page);
+        setContentView(R.layout.activity_successful_signup);
 
-        logOffBtn = findViewById(R.id.logOutButton);
+        backToLoginPageBtn = findViewById(R.id.loginAfterSignUpButton);
 
-        logOffBtn.setOnClickListener(new View.OnClickListener(){
+        backToLoginPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                logOutClick();
+            public void onClick(View view) {
+                backToLogin();
             }
         });
     }
 
-    private void logOutClick(){
+    private void backToLogin(){
         startActivity(new Intent(this, MainActivity.class));
     }
 }
