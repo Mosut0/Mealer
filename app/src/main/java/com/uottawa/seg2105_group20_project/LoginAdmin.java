@@ -2,6 +2,7 @@ package com.uottawa.seg2105_group20_project;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 //Class for admin login page
 public class LoginAdmin extends AppCompatActivity {
 
@@ -50,13 +55,32 @@ public class LoginAdmin extends AppCompatActivity {
         });
     }
 
+    protected void onStart(){
+        super.onStart();
+        databaseAdmins.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                admins.clear();
+                for(DataSnapshot postSnapshot : snapshot.getChildren()){
+                    Admin admin = postSnapshot.getValue(Admin.class);
+                    admins.add(admin);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void checkUserExist(){
         String email = editAdminEmail.getText().toString().trim();
         String password = editAdminPassword.getText().toString().trim();
         Intent intent;
         boolean userExist = false;
         for(int i = 0; i < admins.size(); i++){
-            if(admins.get(i).getEmail().trim().equals(email) && admins.get(i).getPassword().trim().equals(password)){
+            if(admins.get(i).email.trim().equals(email) && admins.get(i).password.trim().equals(password)){
                 intent = new Intent(this, WelcomePage.class);
                 startActivity(intent);
                 userExist = true;

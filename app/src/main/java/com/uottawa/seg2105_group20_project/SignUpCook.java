@@ -58,7 +58,7 @@ public class SignUpCook extends AppCompatActivity {
         cookSignUpBtn.setOnClickListener(new View.OnClickListener(){
            @Override
             public void onClick(View view){
-                addCook();
+                addCook(view);
             }
         });
 
@@ -99,7 +99,7 @@ public class SignUpCook extends AppCompatActivity {
         }
     }
 
-    private void addCook(){
+    public void addCook(View v){
         String firstName = editCookFirst.getText().toString().trim();
         String lastName = editCookLast.getText().toString().trim();
         String email = editCookEmail.getText().toString().trim();
@@ -121,7 +121,8 @@ public class SignUpCook extends AppCompatActivity {
             editCookAddress.setText("");
             editCookDescription.setText("");
 
-            Intent intent = new Intent(this, SuccessfulSignUp.class);
+            Intent intent = new Intent(this, MainActivity.class);
+            Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG).show();
             startActivity(intent);
         }else if(!uploadedCheque){
             Toast.makeText(this, "Please Upload a Void Cheque!", Toast.LENGTH_LONG).show();
