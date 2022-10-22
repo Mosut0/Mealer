@@ -109,7 +109,8 @@ public class SignUpClient extends AppCompatActivity {
             editClientExpiration.setText("");
             editClientCVV.setText("");
 
-            intent = new Intent(this, SuccessfulSignUp.class);
+            intent = new Intent(this, MainActivity.class);
+            Toast.makeText(this, "Sign Up Successful!!", Toast.LENGTH_LONG).show();
             startActivity(intent);
         }else{
             Toast.makeText(this, "One or more fields are empty!", Toast.LENGTH_LONG).show();

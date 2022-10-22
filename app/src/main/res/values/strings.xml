@@ -36,4 +36,5 @@
     <string name="add_void_cheque">Add Picture of Void Cheque</string>
     <string name="expiration_date_mmyy">Expiration Date (MMYY)</string>
     <string name="successfully_nsigned_up">Successfully\nSigned Up</string>
+    <string name="exp_mmyy">EXP (MMYY)</string>
 </resources>
