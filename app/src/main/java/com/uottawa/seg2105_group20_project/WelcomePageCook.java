@@ -9,14 +9,14 @@ import android.widget.Button;
 import android.os.Bundle;
 
 //Class for welcome page
-public class WelcomePage extends AppCompatActivity {
+public class WelcomePageCook extends AppCompatActivity {
 
     Button logOffBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_page);
+        setContentView(R.layout.activity_welcome_page_cook);
 
         logOffBtn = findViewById(R.id.logOutButton);
 

@@ -81,7 +81,7 @@ public class LoginAdmin extends AppCompatActivity {
         boolean userExist = false;
         for(int i = 0; i < admins.size(); i++){
             if(admins.get(i).userName.trim().equals(email) && admins.get(i).password.trim().equals(password)){
-                intent = new Intent(this, WelcomePage.class);
+                intent = new Intent(this, WelcomePageAdmin.class);
                 startActivity(intent);
                 userExist = true;
             }

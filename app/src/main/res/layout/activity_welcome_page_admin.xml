@@ -7,10 +7,11 @@
     android:background="@android:color/holo_purple">
 
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/welcomeTextAdmin"
         android:layout_width="351dp"
         android:layout_height="346dp"
-        android:text="@string/welcome_nyou_are_logged_in_as"
+        android:text="Welcome!
+        You are logged in as Admin"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="55sp"
@@ -23,10 +24,10 @@
 
     <Button
         android:id="@+id/logOutButton"
-        android:layout_width="154dp"
-        android:layout_height="90dp"
+        android:layout_width="143dp"
+        android:layout_height="58dp"
         android:text="@string/log_out"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"

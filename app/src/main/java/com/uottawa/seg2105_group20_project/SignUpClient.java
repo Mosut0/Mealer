@@ -56,7 +56,7 @@ public class SignUpClient extends AppCompatActivity {
         clientSignUpBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                addClient();
+                addClient(view);
             }
         });
 
@@ -94,7 +94,7 @@ public class SignUpClient extends AppCompatActivity {
         });
     }
 
-    private void addClient(){
+    public void addClient(View v){
         String firstName = editClientFirst.getText().toString().trim();
         String lastName = editClientLast.getText().toString().trim();
         String email = editClientEmail.getText().toString().trim();
@@ -102,14 +102,11 @@ public class SignUpClient extends AppCompatActivity {
         String address = editClientAddress.getText().toString().trim();
         String cardNumber = editClientCardNumber.getText().toString().trim();
 
-        Client newClient;
-        Intent intent;
-
         if(!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(cardNumber)){
 
             String dbID = databaseClients.push().getKey();
 
-            newClient = new Client(dbID, firstName, lastName, email, password, address, cardNumber);
+            Client newClient = new Client(dbID, firstName, lastName, email, password, address, cardNumber);
 
             databaseClients.child(dbID).setValue(newClient);
 
@@ -121,7 +118,7 @@ public class SignUpClient extends AppCompatActivity {
             editClientCardNumber.setText("");
 
             Toast.makeText(this, "Sign Up Successful!!", Toast.LENGTH_LONG).show();
-            intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }else{
             Toast.makeText(this, "One or more fields are empty!", Toast.LENGTH_LONG).show();
