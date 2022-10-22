@@ -181,46 +181,6 @@
         app:layout_constraintTop_toBottomOf="@+id/clientCreditCardInfoText"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/clientExpirationDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="11dp"
-        android:background="#30ffffff"
-        android:drawableStart="@drawable/ic_baseline_calendar_today_24"
-        android:drawablePadding="20dp"
-        android:hint="@string/exp_mmyy"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clientCreditCardInfo"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck,TextFields" />
-
-    <EditText
-        android:id="@+id/clientCVV"
-        android:layout_width="177dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="11dp"
-        android:background="#30ffffff"
-        android:drawableStart="@drawable/ic_baseline_credit_card_24"
-        android:drawablePadding="20dp"
-        android:hint="@string/cvv"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/clientExpirationDate"
-        app:layout_constraintTop_toBottomOf="@+id/clientCreditCardInfo"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
     <Button
         android:id="@+id/clientSignupBtn"
         android:layout_width="154dp"
@@ -233,7 +193,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clientCreditCardInfo"
-        app:layout_constraintVertical_bias="0.512"
+        app:layout_constraintVertical_bias="0.179"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button

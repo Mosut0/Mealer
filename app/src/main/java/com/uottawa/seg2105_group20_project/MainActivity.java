@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        databaseClients.addValueEventListener(new ValueEventListener() {
+        databaseCooks.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 cooks.clear();
@@ -106,21 +106,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void checkUserExist(){
+    public void checkUserExist(){
         String email = editLoginEmail.getText().toString().trim();
         String password = editLoginPassword.getText().toString().trim();
-        Intent intent = null;
         boolean userExist = false;
+
         for(int i = 0; i < clients.size(); i++){
             if(clients.get(i).email.trim().equals(email) && clients.get(i).password.trim().equals(password)){
-                intent = new Intent(this, WelcomePage.class);
+                Intent intent = new Intent(this, WelcomePage.class);
                 startActivity(intent);
                 userExist = true;
             }
         }
         for(int i = 0; i < cooks.size(); i++){
             if(cooks.get(i).email.trim().equals(email) && cooks.get(i).password.trim().equals(password)){
-                intent = new Intent(this, WelcomePage.class);
+                Intent intent = new Intent(this, WelcomePage.class);
                 startActivity(intent);
                 userExist = true;
             }

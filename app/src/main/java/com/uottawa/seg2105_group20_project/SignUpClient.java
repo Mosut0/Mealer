@@ -5,17 +5,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.app.Activity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.text.TextUtils;
-
 import android.widget.Toast;
 
 //Class for sign up cook page
@@ -24,8 +29,7 @@ public class SignUpClient extends AppCompatActivity {
     DatabaseReference databaseClients;
 
     EditText editClientFirst, editClientLast, editClientEmail,
-            editClientPassword, editClientAddress, editClientCardNumber,
-            editClientExpiration, editClientCVV;
+            editClientPassword, editClientAddress, editClientCardNumber;
 
     Button clientBackBtn, clientSignUpBtn;
 
@@ -42,14 +46,13 @@ public class SignUpClient extends AppCompatActivity {
         editClientPassword = findViewById(R.id.clientPassword);
         editClientAddress = findViewById(R.id.clientAddress);
         editClientCardNumber = findViewById(R.id.clientCreditCardInfo);
-        editClientExpiration = findViewById(R.id.clientExpirationDate);
-        editClientCVV = findViewById(R.id.clientCVV);
 
         clientBackBtn = findViewById(R.id.clientBackBtn);
         clientSignUpBtn = findViewById(R.id.clientSignupBtn);
 
         clients = new ArrayList<>();
-        databaseClients = FirebaseDatabase.getInstance().getReference("cooks");
+        databaseClients = FirebaseDatabase.getInstance().getReference("clients");
+
         clientSignUpBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -68,6 +71,29 @@ public class SignUpClient extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        databaseClients.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                clients.clear();
+
+                for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
+                    Client client = postSnapshot.getValue(Client.class);
+                    clients.add(client);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+
+            }
+        });
+    }
+
     private void addClient(){
         String firstName = editClientFirst.getText().toString().trim();
         String lastName = editClientLast.getText().toString().trim();
@@ -75,28 +101,15 @@ public class SignUpClient extends AppCompatActivity {
         String password = editClientPassword.getText().toString().trim();
         String address = editClientAddress.getText().toString().trim();
         String cardNumber = editClientCardNumber.getText().toString().trim();
-        String expirationDate = editClientExpiration.getText().toString().trim();
-        String cvv = editClientCVV.getText().toString().trim();
 
-        CreditCard card;
         Client newClient;
         Intent intent;
 
-        if(!(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && TextUtils.isEmpty(email) && TextUtils.isEmpty(password)
-                && TextUtils.isEmpty(address) && TextUtils.isEmpty(cardNumber) && TextUtils.isEmpty(expirationDate) && TextUtils.isEmpty(cvv))){
-            try {
-                Integer.parseInt(cardNumber);
-                Integer.parseInt(expirationDate);
-                Integer.parseInt(cvv);
-            }catch (NumberFormatException e){
-                Toast.makeText(this, "Invalid Credit Card Information!", Toast.LENGTH_LONG).show();
-                return;
-            }
+        if(!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(cardNumber)){
 
             String dbID = databaseClients.push().getKey();
 
-            card = new CreditCard(cardNumber, expirationDate, cvv);
-            newClient = new Client(dbID, firstName, lastName, email, password, address, card);
+            newClient = new Client(dbID, firstName, lastName, email, password, address, cardNumber);
 
             databaseClients.child(dbID).setValue(newClient);
 
@@ -106,11 +119,9 @@ public class SignUpClient extends AppCompatActivity {
             editClientPassword.setText("");
             editClientAddress.setText("");
             editClientCardNumber.setText("");
-            editClientExpiration.setText("");
-            editClientCVV.setText("");
 
-            intent = new Intent(this, MainActivity.class);
             Toast.makeText(this, "Sign Up Successful!!", Toast.LENGTH_LONG).show();
+            intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }else{
             Toast.makeText(this, "One or more fields are empty!", Toast.LENGTH_LONG).show();

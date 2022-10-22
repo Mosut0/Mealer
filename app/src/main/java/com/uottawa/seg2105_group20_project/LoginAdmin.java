@@ -74,7 +74,7 @@ public class LoginAdmin extends AppCompatActivity {
         });
     }
 
-    private void checkUserExist(){
+    public void checkUserExist(){
         String email = editAdminEmail.getText().toString().trim();
         String password = editAdminPassword.getText().toString().trim();
         Intent intent;

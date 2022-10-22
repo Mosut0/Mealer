@@ -20,13 +20,15 @@ public class WelcomePage extends AppCompatActivity {
 
         logOffBtn = findViewById(R.id.logOutButton);
 
-        logOffBtn.setOnClickListener(new View.OnClickListener(){
+        logOffBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                logOutClick(view);
+            public void onClick(View v) {
+                logOutClick(v);
+
             }
         });
     }
+
 
     public void logOutClick(View v){
         startActivity(new Intent(this, MainActivity.class));

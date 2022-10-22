@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 
 import android.widget.Toast;
+
 
 //Class for sign up cook page
 public class SignUpCook extends AppCompatActivity {
@@ -83,6 +88,29 @@ public class SignUpCook extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        databaseCooks.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                cooks.clear();
+
+                for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
+                    Cook cook = postSnapshot.getValue(Cook.class);
+                    cooks.add(cook);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+
+            }
+        });
+    }
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
@@ -121,8 +149,8 @@ public class SignUpCook extends AppCompatActivity {
             editCookAddress.setText("");
             editCookDescription.setText("");
 
-            Intent intent = new Intent(this, MainActivity.class);
             Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }else if(!uploadedCheque){
             Toast.makeText(this, "Please Upload a Void Cheque!", Toast.LENGTH_LONG).show();
