@@ -227,4 +227,23 @@
         android:textSize="25sp"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
+    <Button
+        android:id="@+id/clientBackBtn"
+        android:layout_width="98dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="747dp"
+        android:layout_marginEnd="284dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
 </RelativeLayout>

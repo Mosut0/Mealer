@@ -53,7 +53,7 @@ public class LoginAdmin extends AppCompatActivity {
     private void checkUserExist(){
         String email = editAdminEmail.getText().toString().trim();
         String password = editAdminPassword.getText().toString().trim();
-        Intent intent = null;
+        Intent intent;
         boolean userExist = false;
         for(int i = 0; i < admins.size(); i++){
             if(admins.get(i).getEmail().trim().equals(email) && admins.get(i).getPassword().trim().equals(password)){
@@ -67,7 +67,7 @@ public class LoginAdmin extends AppCompatActivity {
         }
     }
 
-    private void onBackClick(View view){
+    public void onBackClick(View v){
         startActivity(new Intent(this, MainActivity.class));
     }
 }

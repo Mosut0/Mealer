@@ -1,8 +1,6 @@
 package com.uottawa.seg2105_group20_project;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +11,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -48,6 +45,7 @@ public class SignUpClient extends AppCompatActivity {
         editClientExpiration = findViewById(R.id.clientExpirationDate);
         editClientCVV = findViewById(R.id.clientCVV);
 
+        clientBackBtn = findViewById(R.id.clientBackBtn);
         clientSignUpBtn = findViewById(R.id.clientSignupBtn);
 
         clients = new ArrayList<>();
@@ -119,7 +117,7 @@ public class SignUpClient extends AppCompatActivity {
 
     }
 
-    private void onBackClick(View v){
+    public void onBackClick(View v){
         startActivity(new Intent(this, SignUpRole.class));
     }
 

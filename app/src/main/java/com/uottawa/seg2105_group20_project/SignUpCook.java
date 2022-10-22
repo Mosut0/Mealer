@@ -49,6 +49,7 @@ public class SignUpCook extends AppCompatActivity {
         editCookAddress = findViewById(R.id.cookAddress);
         editCookDescription = findViewById(R.id.cookDescription);
 
+        cookBackBtn = findViewById(R.id.cookBackBtn);
         cookSignUpBtn = findViewById(R.id.cookSignupBtn);
         voidChequeBtn = findViewById(R.id.cookVoidCheque);
 
@@ -75,7 +76,7 @@ public class SignUpCook extends AppCompatActivity {
 
             @Override
             public void onClick(View view){
-                onBackClick();
+                onBackClick(view);
             }
         });
 
@@ -130,7 +131,7 @@ public class SignUpCook extends AppCompatActivity {
 
     }
 
-    private void onBackClick(){
+    public void onBackClick(View v){
         startActivity(new Intent(this, SignUpRole.class));
     }
 
