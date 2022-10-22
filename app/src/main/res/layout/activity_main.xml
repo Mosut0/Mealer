@@ -28,20 +28,15 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="608dp"
         android:backgroundTint="@color/material_dynamic_secondary20"
         android:text="@string/login"
         android:textSize="25sp"
-<<<<<<< HEAD
-=======
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="530dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintHorizontal_bias="0.498"
->>>>>>> 2531c47658a25154a1f56c054a5d37e397415c46
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/loginEmailAddress"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767" />
 
     <Button
         android:id="@+id/signupButton"
@@ -80,18 +75,12 @@
 
     <EditText
         android:id="@+id/loginEmailAddress"
-<<<<<<< HEAD
         android:layout_width="394dp"
         android:layout_height="78dp"
         android:background="#30ffffff"
         android:ems="10"
-=======
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="#30ffffff"
->>>>>>> 2531c47658a25154a1f56c054a5d37e397415c46
         android:hint="@string/enter_e_mail_address"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
@@ -102,17 +91,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
         tools:ignore="TextContrastCheck" />
 
-    <EditText
-        android:id="@+id/loginPassword"
-        android:layout_width="394dp"
-        android:layout_height="78dp"
-        android:background="#30ffffff"
-        android:ems="10"
-=======
-        app:layout_constraintVertical_bias="0.426" />
 
     <EditText
         android:id="@+id/loginPassword"
@@ -121,7 +101,6 @@
         android:padding="25dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
->>>>>>> 2531c47658a25154a1f56c054a5d37e397415c46
         android:hint="@string/enter_password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
