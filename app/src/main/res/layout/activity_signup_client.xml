@@ -223,8 +223,8 @@
 
     <Button
         android:id="@+id/clientSignupBtn"
-        android:layout_width="152dp"
-        android:layout_height="50dp"
+        android:layout_width="154dp"
+        android:layout_height="56dp"
         android:backgroundTint="@color/material_dynamic_secondary20"
         android:text="@string/sign_up"
         android:textSize="25sp"
@@ -238,13 +238,12 @@
 
     <Button
         android:id="@+id/clientBackBtn"
-        android:layout_width="98dp"
-        android:layout_height="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="680dp"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
