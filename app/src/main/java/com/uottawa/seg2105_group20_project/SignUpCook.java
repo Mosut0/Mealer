@@ -49,6 +49,7 @@ public class SignUpCook extends AppCompatActivity {
         editCookAddress = findViewById(R.id.cookAddress);
         editCookDescription = findViewById(R.id.cookDescription);
 
+        cookBackBtn = findViewById(R.id.cookBackBtn);
         cookSignUpBtn = findViewById(R.id.cookSignupBtn);
         voidChequeBtn = findViewById(R.id.cookVoidCheque);
 
