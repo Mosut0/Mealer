@@ -23,12 +23,12 @@ public class SuccessfulSignUp extends AppCompatActivity {
         backToLoginPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                backToLogin();
+                backToLogin(view);
             }
         });
     }
 
-    private void backToLogin(){
+    public void backToLogin(View v){
         startActivity(new Intent(this, MainActivity.class));
     }
 }

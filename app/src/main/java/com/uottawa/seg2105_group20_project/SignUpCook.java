@@ -76,7 +76,7 @@ public class SignUpCook extends AppCompatActivity {
 
             @Override
             public void onClick(View view){
-                onBackClick();
+                onBackClick(view);
             }
         });
 
@@ -131,7 +131,7 @@ public class SignUpCook extends AppCompatActivity {
 
     }
 
-    private void onBackClick(){
+    public void onBackClick(View v){
         startActivity(new Intent(this, SignUpRole.class));
     }
 
