@@ -159,48 +159,28 @@
 
     <Button
         android:id="@+id/cookVoidCheque"
-        android:layout_width="305dp"
-        android:layout_height="75dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/cookDescription"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="247dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="@color/material_dynamic_secondary20"
-        android:text="@string/add_void_cheque"
-        android:textSize="15sp" />
+        android:text="@string/add_void_cheque" />
 
     <Button
         android:id="@+id/cookSignupBtn"
-        android:layout_width="191dp"
-        android:layout_height="72dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/cookVoidCheque"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="269dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="101dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/material_dynamic_secondary20"
         android:text="@string/sign_up"
         android:textSize="25sp"
         tools:ignore="DuplicateSpeakableTextCheck" />
-
-    <Button
-        android:id="@+id/cookBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="1196dp"
-        android:layout_marginEnd="672dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/back" />
-
 
 </RelativeLayout>
 
