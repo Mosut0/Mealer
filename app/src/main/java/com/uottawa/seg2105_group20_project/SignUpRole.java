@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.widget.EditText;
 
 
 //Class with sign up role page
 public class SignUpRole extends AppCompatActivity {
 
-    protected Button clientBtn, cookBtn, backBtn;
+    Button clientBtn, cookBtn, backBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,37 +24,36 @@ public class SignUpRole extends AppCompatActivity {
         backBtn = findViewById(R.id.roleBackButton);
 
         clientBtn.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view){
-                clientClick();
+                clientClick(view);
             }
         });
-
         cookBtn.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view){
-                cookClick();
+                cookClick(view);
             }
         });
-
         backBtn.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view){
-                backClick();
+                backClick(view);
             }
         });
-
     }
 
-    public void clientClick () {
+    public void clientClick (View v) {
         startActivity(new Intent(this, SignUpClient.class));
     }
-    public void cookClick () {
+    public void cookClick (View v) {
         startActivity(new Intent(this, SignUpCook.class));
     }
-    public void backClick (){
+    public void backClick (View v){
         startActivity(new Intent(this, MainActivity.class));
     }
-
 
 }

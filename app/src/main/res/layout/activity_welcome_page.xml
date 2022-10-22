@@ -8,24 +8,23 @@
 
     <TextView
         android:id="@+id/welcomeText"
-        android:layout_width="651dp"
+        android:layout_width="351dp"
         android:layout_height="346dp"
         android:text="@string/welcome_nyou_are_logged_in_as"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="80sp"
+        android:textSize="55sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
+        app:layout_constraintVertical_bias="0.498" />
 
     <Button
         android:id="@+id/logOutButton"
-        android:layout_width="168dp"
-        android:layout_height="103dp"
+        android:layout_width="154dp"
+        android:layout_height="90dp"
         android:text="@string/log_out"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"

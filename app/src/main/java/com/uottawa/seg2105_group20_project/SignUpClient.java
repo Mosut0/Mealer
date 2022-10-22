@@ -24,15 +24,15 @@ import android.widget.Toast;
 //Class for sign up cook page
 public class SignUpClient extends AppCompatActivity {
 
-    protected DatabaseReference databaseClients;
+    DatabaseReference databaseClients;
 
-    protected EditText editClientFirst, editClientLast, editClientEmail,
+    EditText editClientFirst, editClientLast, editClientEmail,
             editClientPassword, editClientAddress, editClientCardNumber,
             editClientExpiration, editClientCVV;
 
-    protected Button clientBackBtn, clientSignUpBtn;
+    Button clientBackBtn, clientSignUpBtn;
 
-    protected ArrayList<Client> clients;
+    ArrayList<Client> clients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class SignUpClient extends AppCompatActivity {
 
             @Override
             public void onClick(View view){
-                onBackClick();
+                onBackClick(view);
             }
         });
 
@@ -120,7 +120,7 @@ public class SignUpClient extends AppCompatActivity {
 
     }
 
-    private void onBackClick(){
+    private void onBackClick(View v){
         startActivity(new Intent(this, SignUpRole.class));
     }
 

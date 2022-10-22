@@ -24,18 +24,18 @@ import android.widget.Toast;
 //Class for sign up cook page
 public class SignUpCook extends AppCompatActivity {
 
-    protected DatabaseReference databaseCooks;
+    DatabaseReference databaseCooks;
 
-    protected EditText editCookFirst, editCookLast, editCookEmail,
+    EditText editCookFirst, editCookLast, editCookEmail,
             editCookPassword, editCookAddress, editCookDescription;
 
-    protected Button cookBackBtn, cookSignUpBtn, voidChequeBtn;
+    Button cookBackBtn, cookSignUpBtn, voidChequeBtn;
 
-    protected ArrayList<Cook> cooks;
+    ArrayList<Cook> cooks;
 
-    protected int SELECT_IMAGE_CODE = 1;
+    int SELECT_IMAGE_CODE = 1;
 
-    protected boolean uploadedCheque = false;
+    boolean uploadedCheque = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

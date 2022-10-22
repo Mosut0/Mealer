@@ -11,7 +11,7 @@ import android.os.Bundle;
 //Class for welcome page
 public class WelcomePage extends AppCompatActivity {
 
-    protected Button logOffBtn;
+    Button logOffBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

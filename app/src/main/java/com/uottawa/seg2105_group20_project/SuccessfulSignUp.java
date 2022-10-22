@@ -11,7 +11,7 @@ import android.widget.Button;
 //Class for welcome page
 public class SuccessfulSignUp extends AppCompatActivity {
 
-    protected Button backToLoginPageBtn;
+    Button backToLoginPageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

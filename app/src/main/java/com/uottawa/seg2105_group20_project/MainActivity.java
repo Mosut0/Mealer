@@ -21,11 +21,11 @@ import com.google.firebase.database.ValueEventListener;
 //Class for main login page
 public class MainActivity extends AppCompatActivity {
 
-    protected Button adminButton, signupButton, loginButton;
-    protected EditText editLoginEmail, editLoginPassword;
-    protected DatabaseReference databaseAdmins, databaseClients, databaseCooks;
-    protected ArrayList<Client> clients;
-    protected ArrayList<Cook> cooks;
+    Button adminButton, signupButton, loginButton;
+    EditText editLoginEmail, editLoginPassword;
+    DatabaseReference databaseAdmins, databaseClients, databaseCooks;
+    ArrayList<Client> clients;
+    ArrayList<Cook> cooks;
 
     public MainActivity() {
     }

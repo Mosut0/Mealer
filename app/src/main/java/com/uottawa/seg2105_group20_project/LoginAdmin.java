@@ -16,10 +16,10 @@ import com.google.firebase.database.FirebaseDatabase;
 //Class for admin login page
 public class LoginAdmin extends AppCompatActivity {
 
-    protected DatabaseReference databaseAdmins;
-    protected ArrayList<Admin> admins;
-    protected Button loginAdminButton, backButton;
-    protected EditText editAdminEmail, editAdminPassword;
+    DatabaseReference databaseAdmins;
+    ArrayList<Admin> admins;
+    Button loginAdminButton, backButton;
+    EditText editAdminEmail, editAdminPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

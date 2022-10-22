@@ -9,23 +9,23 @@
 
     <TextView
         android:id="@+id/successfullySignUpText"
-        android:layout_width="651dp"
-        android:layout_height="346dp"
-        android:text="@string/successfully_signed_up"
+        android:layout_width="343dp"
+        android:layout_height="210dp"
+        android:text="@string/successfully_nsigned_up"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="80sp"
+        android:textSize="55sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <Button
         android:id="@+id/loginAfterSignUpButton"
-        android:layout_width="168dp"
-        android:layout_height="103dp"
+        android:layout_width="150dp"
+        android:layout_height="76dp"
         android:text="@string/login"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
