@@ -48,7 +48,6 @@ public class SignUpClient extends AppCompatActivity {
         editClientExpiration = findViewById(R.id.clientExpirationDate);
         editClientCVV = findViewById(R.id.clientCVV);
 
-        clientBackBtn = findViewById(R.id.clientBackButton);
         clientSignUpBtn = findViewById(R.id.clientSignupBtn);
 
         clients = new ArrayList<>();
