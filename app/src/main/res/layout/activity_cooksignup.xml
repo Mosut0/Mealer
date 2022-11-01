@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_purple"
+    tools:context=".CookSignUp">
+
+
+    <TextView
+        android:id="@+id/cookSignUpTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="@string/cook_sign_up"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CookPersonalInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cookSignUpTitle"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/personal_information"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+    <EditText
+        android:id="@+id/cookFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CookPersonalInfoText"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/first_name"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/cookLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cookFirstName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/last_name"
+        android:importantForAutofill="no"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/cookEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cookLastName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_alternate_email_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/email_address"
+        android:importantForAutofill="no"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/cookPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cookEmailAddress"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_password_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/cookAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cookPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_house_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/address"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+
+    <EditText
+        android:id="@+id/cookDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cookAddress"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_description_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/describe_yourself"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="30dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/cookVoidCheque"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cookDescription"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:text="@string/add_void_cheque" />
+
+    <Button
+        android:id="@+id/cookSignupBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cookVoidCheque"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:text="@string/sign_up"
+        android:textSize="25sp"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/cookBackBtn"
+        android:layout_width="92dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="680dp"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/back" />
+
+</RelativeLayout>
