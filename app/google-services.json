@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "92189353019",
+    "firebase_url": "https://seg2105-group20-default-rtdb.firebaseio.com",
+    "project_id": "seg2105-group20",
+    "storage_bucket": "seg2105-group20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92189353019:android:36235dd94960c876e4e81e",
+        "android_client_info": {
+          "package_name": "com.uottawa.seg2105_group20_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92189353019-e0cu4n2cnunai7cu08jm95riod4kbuev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu-CwiAhJegNmrjty5_XJOlmm66W7GTV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92189353019-e0cu4n2cnunai7cu08jm95riod4kbuev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
