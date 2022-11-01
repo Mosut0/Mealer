@@ -3,6 +3,8 @@ Project Deliverables for SEG2105 Group 20
 
 Device: Pixel 6 API 33
 
+Admin Credentials: username = gr2, password = gr20pw
+
 Members:
     Mostafa Yassine #300233320
     Adham Radwan #
