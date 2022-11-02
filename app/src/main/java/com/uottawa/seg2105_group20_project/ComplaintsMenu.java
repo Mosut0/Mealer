@@ -1,5 +1,6 @@
 package com.uottawa.seg2105_group20_project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,14 +11,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import java.util.ArrayList;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.*;
 
 public class ComplaintsMenu extends AppCompatActivity {
 
-    private ArrayList<Complaint> complaintList;
-    private RecyclerView recyclerView;
+    DatabaseReference dbComplaints;
+    List<Complaint> complaintList;
+    RecyclerView recyclerView;
 
     Button complaintMenuBackBtn;
+    Button complaintDismissBtn;
+    Button complaintSuspendBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +35,10 @@ public class ComplaintsMenu extends AppCompatActivity {
         setContentView(R.layout.activity_complaints_menu);
         recyclerView = findViewById(R.id.recyclerView);
         complaintList = new ArrayList<>();
-
+        dbComplaints = FirebaseDatabase.getInstance().getReference("complaints");
         complaintMenuBackBtn = (Button) findViewById(R.id.complaintsBackBtn);
-
-        setComplainInfo();
-        setAdapter();
+        //complaintDismissBtn = (Button) findViewById(R.id.complaintDismissBtn);
+        //complaintSuspendBtn = (Button) findViewById(R.id.complaintSuspendBtn);
 
         complaintMenuBackBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -38,33 +47,41 @@ public class ComplaintsMenu extends AppCompatActivity {
                 complaintBackClick();
             }
         });
+
+    }
+
+    protected void onStart() {
+        super.onStart();
+
+        dbComplaints.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                complaintList.clear();
+                for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
+                    Complaint complaint = postSnapshot.getValue(Complaint.class);
+                    complaint.setDbId(postSnapshot.getKey());
+                    complaintList.add(complaint);
+                }
+                setAdapter();
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+
+            }
+        });
+
     }
 
     public void setAdapter(){
+        System.out.println(complaintList.size());
         RecyclerAdapter adapter = new RecyclerAdapter(complaintList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-    }
-
-    private void setComplainInfo(){
-        complaintList.add(new Complaint("Mostafa", "Adham","testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"));
-        complaintList.add(new Complaint("Adham", "Mohammad","test"));
-        complaintList.add(new Complaint("Mohammed", "Mai","Test"));
-        complaintList.add(new Complaint("Mai", "Mostafa","Test"));
-        complaintList.add(new Complaint("Mostafa", "Adham","testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"));
-        complaintList.add(new Complaint("Adham", "Mohammad","test"));
-        complaintList.add(new Complaint("Mohammed", "Mai","Test"));
-        complaintList.add(new Complaint("Mai", "Mostafa","Test"));
-        complaintList.add(new Complaint("Mostafa", "Adham","testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"));
-        complaintList.add(new Complaint("Adham", "Mohammad","test"));
-        complaintList.add(new Complaint("Mohammed", "Mai","Test"));
-        complaintList.add(new Complaint("Mai", "Mostafa","Test"));
-        complaintList.add(new Complaint("Mostafa", "Adham","testtesttesttesttesttesttesttesttesttest"));
-        complaintList.add(new Complaint("Adham", "Mohammad","test"));
-        complaintList.add(new Complaint("Mohammed", "Mai","Test"));
-        complaintList.add(new Complaint("Mai", "Mostafa","Test"));
     }
 
     public void complaintBackClick(){

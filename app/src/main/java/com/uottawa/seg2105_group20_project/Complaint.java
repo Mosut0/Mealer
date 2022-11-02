@@ -1,13 +1,13 @@
 package com.uottawa.seg2105_group20_project;
 
 public class Complaint {
-    private String complainee, complainant, complaintDescription;
+    private String complainee, complainant, description, dbId;
 
     public Complaint(){};
     public Complaint(String complainee, String complainant,String complaintDescription){
         this.complainee = complainee;
         this.complainant = complainant;
-        this.complaintDescription = complaintDescription;
+        this.description = complaintDescription;
     }
 
     public String getComplainee() {
@@ -26,11 +26,19 @@ public class Complaint {
         this.complainant = complainant;
     }
 
-    public String getComplaintDescription() {
-        return complaintDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setComplaintDescription(String complaintDescription) {
-        this.complaintDescription = complaintDescription;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDbId() {
+        return dbId;
+    }
+
+    public void setDbId(String dbId) {
+        this.dbId = dbId;
     }
 }

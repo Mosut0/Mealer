@@ -35,7 +35,7 @@ public class LoginAdmin extends Activity {
         loginBtn = (Button) findViewById(R.id.loginButtonAdmin);
         backBtn = (Button) findViewById(R.id.backButtonAdmin);
         adminList = new ArrayList<>();
-        dbAdmin = FirebaseDatabase.getInstance().getReference("Admin");
+        dbAdmin = FirebaseDatabase.getInstance().getReference("admins");
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
 
