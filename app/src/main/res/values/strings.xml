@@ -39,4 +39,12 @@
     <string name="exp_mmyy">EXP (MMYY)</string>
     <string name="welcome_you_are_logged_in_as_admin">Welcome! You are logged in as Admin</string>
     <string name="list_of_complaints">List of Complaints</string>
+    <string name="complainee">Complainee:</string>
+    <string name="id">ID:</string>
+    <string name="description">Description</string>
+    <string name="complainant">Complainant:</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="suspend">Suspend</string>
+    <string name="suspension_time">Suspension Time</string>
+    <string name="days_hours_minutes">Days/Hours/Minutes</string>
 </resources>
