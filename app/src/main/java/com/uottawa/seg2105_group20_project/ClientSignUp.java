@@ -26,12 +26,12 @@ import android.widget.Toast;
 
 public class ClientSignUp extends Activity{
 
-    EditText editTextLastName;
-    EditText editTextFirstName;
-    EditText editTextEmail;
-    EditText editTextPassword;
-    EditText editTextAddress;
-    EditText editTextCreditCardNumber;
+    EditText textLastName;
+    EditText textFirstName;
+    EditText textEmail;
+    EditText editPassword;
+    EditText textAddress;
+    EditText textCreditCardNumber;
 
     Button buttonClientSignUp;
     Button buttonClientBack;
@@ -45,17 +45,16 @@ public class ClientSignUp extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientsignup);
 
-        editTextFirstName = (EditText) findViewById(R.id.clientFirstName);
-        editTextLastName = (EditText) findViewById(R.id.clientLastName);
-        editTextEmail = (EditText) findViewById(R.id.clientEmailAddress);
-        editTextPassword = (EditText) findViewById(R.id.clientPassword);
-        editTextAddress = (EditText) findViewById(R.id.clientAddress);
-        editTextCreditCardNumber = (EditText) findViewById(R.id.clientCreditCardInfo);
+        textFirstName = (EditText) findViewById(R.id.clientFirstName);
+        textLastName = (EditText) findViewById(R.id.clientLastName);
+        textEmail = (EditText) findViewById(R.id.clientEmailAddress);
+        editPassword = (EditText) findViewById(R.id.clientPassword);
+        textAddress = (EditText) findViewById(R.id.clientAddress);
+        textCreditCardNumber = (EditText) findViewById(R.id.clientCreditCardInfo);
         buttonClientSignUp = (Button) findViewById(R.id.clientSignupBtn);
         buttonClientBack = (Button) findViewById(R.id.clientBackBtn);
         clients = new ArrayList<>();
         databaseClient = FirebaseDatabase.getInstance().getReference("clients");
-        //adding an onclicklistener to button
         buttonClientSignUp.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -97,15 +96,12 @@ public class ClientSignUp extends Activity{
     }
 
     private void addClient() {
-        String firstName = editTextFirstName.getText().toString().trim();
-        String lastName = editTextLastName.getText().toString().trim();
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-        String address = editTextAddress.getText().toString().trim();
-        String creditCardNumber = editTextCreditCardNumber.getText().toString().trim();
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef2 = database.getReference("First Name");
-        //myRef2.setValue( editTextFirstName.getText().toString().trim());
+        String firstName = textFirstName.getText().toString().trim();
+        String lastName = textLastName.getText().toString().trim();
+        String email = textEmail.getText().toString().trim();
+        String password = editPassword.getText().toString().trim();
+        String address = textAddress.getText().toString().trim();
+        String creditCardNumber = textCreditCardNumber.getText().toString().trim();
 
         if(!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(creditCardNumber)){
             String id = databaseClient.push().getKey();
@@ -114,19 +110,19 @@ public class ClientSignUp extends Activity{
 
             databaseClient.child(id).setValue(client);
 
-            editTextFirstName.setText("");
-            editTextLastName.setText("");
-            editTextEmail.setText("");
-            editTextPassword.setText("");
-            editTextAddress.setText("");
-            editTextCreditCardNumber.setText("");
+            textFirstName.setText("");
+            textLastName.setText("");
+            textEmail.setText("");
+            editPassword.setText("");
+            textAddress.setText("");
+            textCreditCardNumber.setText("");
 
-            Toast.makeText(this, "Sign up Successful", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Successfully Signed Up!", Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, Login.class);
             startActivity(i);
         }
         else {
-            Toast.makeText(this, "Please Fill all fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "One or Many Field Are Missing", Toast.LENGTH_LONG).show();
         }
 
     }

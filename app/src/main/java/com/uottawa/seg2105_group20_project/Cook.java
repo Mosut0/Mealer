@@ -4,9 +4,7 @@ public class Cook extends Account {
     public String description;
     public String voidCheque;
 
-    public Cook(){
-
-    }
+    public Cook(){} //Needed for compilation
     public Cook(String id, String firstName, String lastName, String email, String password, String address, String description, String voidCheque) {
 
         if ( firstName == null || lastName == null || email == null || password == null || address == null || description == null || voidCheque == null )

@@ -27,14 +27,14 @@ public class Login extends Activity {
     Button buttonLogin;
     Button signupBtn;
     Button adminBtn;
-    EditText editTextEmail;
-    EditText editTextPassword;
+    EditText textEmail;
+    EditText textPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        editTextEmail = (EditText) findViewById(R.id.loginEmailAddress);
-        editTextPassword = (EditText) findViewById(R.id.loginPassword);
+        textEmail = (EditText) findViewById(R.id.loginEmailAddress);
+        textPassword = (EditText) findViewById(R.id.loginPassword);
         buttonLogin = (Button) findViewById(R.id.loginButton);
         signupBtn = (Button) findViewById(R.id.signupButton);
         adminBtn = (Button) findViewById(R.id.adminButton);
@@ -109,8 +109,8 @@ public class Login extends Activity {
     }
     protected void checkExistingUser(){
 
-        String Email = editTextEmail.getText().toString().trim();
-        String Password = editTextPassword.getText().toString().trim();
+        String Email = textEmail.getText().toString().trim();
+        String Password = textPassword.getText().toString().trim();
         boolean loginFound = false;
         for (int i=0; i<clients.size(); i++){
             if (clients.get(i).email.trim().equals(Email) && clients.get(i).password.trim().equals(Password)){

@@ -45,12 +45,12 @@ import java.util.List;
 
 public class CookSignUp extends AppCompatActivity{
 
-    EditText editTextLastName2;
-    EditText editTextFirstName2;
-    EditText editTextEmail2;
-    EditText editTextPassword2;
-    EditText editTextAddress2;
-    EditText editTextDescription;
+    EditText textLastName;
+    EditText textFirstName;
+    EditText textEmail;
+    EditText textPassword;
+    EditText textAddress;
+    EditText textDescription;
 
     Button buttonCookSignUp;
     Button backBtn;
@@ -59,7 +59,6 @@ public class CookSignUp extends AppCompatActivity{
     DatabaseReference databaseCook;
 
     Button btn2;
-    ImageView imageView;
     int SELECT_IMAGE_CODE=1;
     boolean voidChequeUploaded = false;
 
@@ -68,13 +67,12 @@ public class CookSignUp extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cooksignup);
 //
-        editTextFirstName2 = (EditText) findViewById(R.id.cookFirstName);
-        editTextLastName2 = (EditText) findViewById(R.id.cookLastName);
-        editTextEmail2 = (EditText) findViewById(R.id.cookEmailAddress);
-        editTextPassword2 = (EditText) findViewById(R.id.cookPassword);
-        editTextAddress2 = (EditText) findViewById(R.id.cookAddress);
-        editTextDescription = (EditText) findViewById(R.id.cookDescription);
-        //editTextVoidCheque = (EditText) findViewById(R.id.editTextVoidCheque);
+        textFirstName = (EditText) findViewById(R.id.cookFirstName);
+        textLastName = (EditText) findViewById(R.id.cookLastName);
+        textEmail = (EditText) findViewById(R.id.cookEmailAddress);
+        textPassword = (EditText) findViewById(R.id.cookPassword);
+        textAddress = (EditText) findViewById(R.id.cookAddress);
+        textDescription = (EditText) findViewById(R.id.cookDescription);
         buttonCookSignUp = (Button) findViewById(R.id.cookSignupBtn);
         backBtn = (Button) findViewById(R.id.cookBackBtn);
 
@@ -92,7 +90,6 @@ public class CookSignUp extends AppCompatActivity{
 
         cooks = new ArrayList<>();
         databaseCook = FirebaseDatabase.getInstance().getReference("cooks");
-        //adding an onclicklistener to button
         buttonCookSignUp.setOnClickListener(new View.OnClickListener() {
 
 
@@ -133,12 +130,12 @@ public class CookSignUp extends AppCompatActivity{
     }
 
     private void addCook() {
-        String firstName = editTextFirstName2.getText().toString().trim();
-        String lastName = editTextLastName2.getText().toString().trim();
-        String email = editTextEmail2.getText().toString().trim();
-        String password = editTextPassword2.getText().toString().trim();
-        String address = editTextAddress2.getText().toString().trim();
-        String description = editTextDescription.getText().toString().trim();
+        String firstName = textFirstName.getText().toString().trim();
+        String lastName = textLastName.getText().toString().trim();
+        String email = textEmail.getText().toString().trim();
+        String password = textPassword.getText().toString().trim();
+        String address = textAddress.getText().toString().trim();
+        String description = textDescription.getText().toString().trim();
 
         if(!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(description) && voidChequeUploaded == true){
             String id = databaseCook.push().getKey();
@@ -147,14 +144,14 @@ public class CookSignUp extends AppCompatActivity{
 
             databaseCook.child(id).setValue(cook);
 
-            editTextFirstName2.setText("");
-            editTextLastName2.setText("");
-            editTextEmail2.setText("");
-            editTextPassword2.setText("");
-            editTextAddress2.setText("");
-            editTextDescription.setText("");
+            textFirstName.setText("");
+            textLastName.setText("");
+            textEmail.setText("");
+            textPassword.setText("");
+            textAddress.setText("");
+            textDescription.setText("");
 
-            Toast.makeText(this, "Sign up Successful", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Successfully Signed Up!", Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, Login.class);
             startActivity(i);
         }
@@ -162,7 +159,7 @@ public class CookSignUp extends AppCompatActivity{
             Toast.makeText(this, "Please Upload a Void Cheque", Toast.LENGTH_LONG).show();
         }
         else {
-            Toast.makeText(this, "Please Fill all fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "One or Many Fields Are Empty", Toast.LENGTH_LONG).show();
         }
 
     }

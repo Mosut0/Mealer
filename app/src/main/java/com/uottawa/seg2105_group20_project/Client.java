@@ -4,7 +4,7 @@ package com.uottawa.seg2105_group20_project;
 public class Client extends Account{
     public String creditCardNumber;
 
-    public Client(){}
+    public Client(){} //Needed for compilation
     public Client(String id, String firstName, String lastName, String email, String password, String address, String creditCardNumber) {
 
         if ( firstName == null || lastName == null || email == null || password == null || address == null || creditCardNumber == null)
