@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,8 +27,6 @@ public class ComplaintsMenu extends AppCompatActivity {
     RecyclerView recyclerView;
 
     Button complaintMenuBackBtn;
-    Button complaintDismissBtn;
-    Button complaintSuspendBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,6 @@ public class ComplaintsMenu extends AppCompatActivity {
         complaintList = new ArrayList<>();
         dbComplaints = FirebaseDatabase.getInstance().getReference("complaints");
         complaintMenuBackBtn = (Button) findViewById(R.id.complaintsBackBtn);
-        //complaintDismissBtn = (Button) findViewById(R.id.complaintDismissBtn);
-        //complaintSuspendBtn = (Button) findViewById(R.id.complaintSuspendBtn);
 
         complaintMenuBackBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -47,6 +44,10 @@ public class ComplaintsMenu extends AppCompatActivity {
                 complaintBackClick();
             }
         });
+
+
+
+
 
     }
 
@@ -59,10 +60,13 @@ public class ComplaintsMenu extends AppCompatActivity {
                 complaintList.clear();
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
                     Complaint complaint = postSnapshot.getValue(Complaint.class);
-                    complaint.setDbId(postSnapshot.getKey());
-                    complaintList.add(complaint);
+                    if(complaint != null && !complaint.isReviewed()) { //Don't remember why I added a reviewed attribute
+                        complaint.setDbId(postSnapshot.getKey());
+                        complaintList.add(complaint);
+                    }
                 }
                 setAdapter();
+
             }
 
 

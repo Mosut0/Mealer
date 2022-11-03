@@ -29,6 +29,7 @@ public class Login extends Activity {
     Button adminBtn;
     EditText textEmail;
     EditText textPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,13 +1,16 @@
 package com.uottawa.seg2105_group20_project;
 
 public class Complaint {
-    private String complainee, complainant, description, dbId;
+    private String complainee, complaineeID, complainant, description, dbId;
+    private boolean reviewed;
 
     public Complaint(){};
-    public Complaint(String complainee, String complainant,String complaintDescription){
+    public Complaint(String complainee, String complaineeID, String complainant,String complaintDescription){
         this.complainee = complainee;
+        this.complaineeID = complaineeID;
         this.complainant = complainant;
         this.description = complaintDescription;
+        this.reviewed = false;
     }
 
     public String getComplainee() {
@@ -40,5 +43,21 @@ public class Complaint {
 
     public void setDbId(String dbId) {
         this.dbId = dbId;
+    }
+
+    public boolean isReviewed() {
+        return reviewed;
+    }
+
+    public void setReviewed(boolean reviewed) {
+        this.reviewed = reviewed;
+    }
+
+    public String getComplaineeID() {
+        return complaineeID;
+    }
+
+    public void setComplaineeID(String complaineeID) {
+        this.complaineeID = complaineeID;
     }
 }

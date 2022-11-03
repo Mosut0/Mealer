@@ -9,8 +9,7 @@
         android:id="@+id/welcomeTextClient"
         android:layout_width="351dp"
         android:layout_height="346dp"
-        android:text="Welcome!
-        You are logged in as Client"
+        android:text="@string/welcome_you_are_logged_in_as_client"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="55sp"
@@ -33,4 +32,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.966" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

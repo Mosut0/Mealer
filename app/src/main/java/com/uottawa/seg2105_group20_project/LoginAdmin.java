@@ -89,6 +89,7 @@ public class LoginAdmin extends Activity {
         }
         if (!loginFound){
             Toast.makeText(this, "Login not found", Toast.LENGTH_LONG).show();
+
         }
 
     }
