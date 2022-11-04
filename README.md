@@ -7,6 +7,6 @@ Admin Credentials: username = gr2, password = gr20pw
 
 Members:
     Mostafa Yassine #300233320
-    Adham Radwan # 300224504
-    Mohamad Bayaa 300251448
-    Maisam Al-Nuaimi 300253256
+    Adham Radwan #300224504
+    Mohamad Bayaa #300251448
+    Maisam Al-Nuaimi #300253256
