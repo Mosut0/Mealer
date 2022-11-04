@@ -42,11 +42,13 @@
         android:layout_marginEnd="176dp"
         android:text="@string/status_nsuspended_for_99d_99h_99m"
         android:textColor="@color/white"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logOutButtonCook"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.953"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck"
+        tools:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

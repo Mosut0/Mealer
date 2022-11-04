@@ -19,6 +19,6 @@ public class Cook extends Account {
         this.description = description;
         this.voidCheque = voidCheque;
         this.id = id;
-        this.suspension = "active";
+        this.suspension = "Active";
     }
 }

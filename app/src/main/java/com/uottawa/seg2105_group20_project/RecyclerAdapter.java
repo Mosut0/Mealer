@@ -69,7 +69,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
                     int minutes = Integer.parseInt(suspensionTime[2]);
                     if(days >= 0 && hours >= 0 && minutes >= 0){
                         String cookID = (String) dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get().getResult().getValue();
-                        dbCooks.child(cookID).child("suspension").setValue(days + "D " + hours + "H " + minutes + "M");
+                        dbCooks.child(cookID).child("suspension").setValue("Suspended for: " + days + "D " + hours + "H " + minutes + "M");
                         dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
                         adapter.complaintList.remove(adapterPosition);
                         adapter.notifyItemChanged(adapterPosition);
@@ -84,6 +84,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
                 int adapterPosition = getAdapterPosition();
                 String cookID = (String) dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get().getResult().getValue();
                 dbCooks.child(cookID).child("suspension").setValue("Banned");
+                dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
+                adapter.complaintList.remove(adapterPosition);
+                adapter.notifyItemChanged(adapterPosition);
                 Toast.makeText(view.getContext(), "Cook Banned", Toast.LENGTH_LONG).show();
 
             });
