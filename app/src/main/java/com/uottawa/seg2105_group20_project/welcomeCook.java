@@ -108,6 +108,10 @@ public class welcomeCook extends Activity{
     }
 
     public void viewOfferedMenuClick(){
-
+        Intent i = new Intent(this, OfferedMealMenu.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("cookID", cookID);
+        i.putExtras(bundle);
+        startActivity(i);
     }
 }

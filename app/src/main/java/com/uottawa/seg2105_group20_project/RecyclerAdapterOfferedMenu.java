@@ -1,25 +1,27 @@
 package com.uottawa.seg2105_group20_project;
 
 import android.annotation.SuppressLint;
-import android.text.*;
+import android.text.Html;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import android.widget.*;
-import android.view.*;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.*;
+import java.util.List;
 
-public class RecyclerAdapterMenu extends RecyclerView.Adapter<RecyclerAdapterMenu.MyViewHolder> {
+public class RecyclerAdapterOfferedMenu extends RecyclerView.Adapter<RecyclerAdapterOfferedMenu.MyViewHolder> {
 
     private List<Meal> menuList;
     private String cookID;
 
-    public RecyclerAdapterMenu(List<Meal> menuList, String cookID){
+    public RecyclerAdapterOfferedMenu(List<Meal> menuList, String cookID){
         this.cookID = cookID;
         this.menuList = menuList;
     }
@@ -32,7 +34,7 @@ public class RecyclerAdapterMenu extends RecyclerView.Adapter<RecyclerAdapterMen
         private final TextView allergensText;
         private final TextView priceText;
         private final TextView descriptionText;
-        private RecyclerAdapterMenu adapter;
+        private RecyclerAdapterOfferedMenu adapter;
 
         DatabaseReference dbMenu;
 
@@ -48,33 +50,25 @@ public class RecyclerAdapterMenu extends RecyclerView.Adapter<RecyclerAdapterMen
 
             dbMenu = FirebaseDatabase.getInstance().getReference("meals").child(cookID);
 
-            view.findViewById(R.id.deleteMealBtn).setOnClickListener(itemView -> {
+            view.findViewById(R.id.unofferBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
-                dbMenu.child(menuList.get(adapterPosition).getMealID()).removeValue();
+                dbMenu.child(menuList.get(adapterPosition).getMealID()).child("offered").setValue(false);
                 adapter.menuList.remove(adapterPosition);
                 adapter.notifyItemChanged(adapterPosition);
-                Toast.makeText(itemView.getContext(), "Menu Deleted", Toast.LENGTH_LONG).show();
+                Toast.makeText(itemView.getContext(), "Meal Unoffered", Toast.LENGTH_LONG).show();
 
-            });
-
-            view.findViewById(R.id.offerBtn).setOnClickListener(itemView -> {
-                int adapterPosition = getAdapterPosition();
-                dbMenu.child(menuList.get(adapterPosition).getMealID()).child("offered").setValue(true);
-                adapter.menuList.remove(adapterPosition);
-                adapter.notifyItemChanged(adapterPosition);
-                Toast.makeText(itemView.getContext(), "Meal Offered", Toast.LENGTH_LONG).show();
             });
 
         }
 
-        public MyViewHolder linkAdapter(RecyclerAdapterMenu adapter){
+        public MyViewHolder linkAdapter(RecyclerAdapterOfferedMenu adapter){
             this.adapter = adapter;
             return this;
         }
     }
     @NonNull
     @Override
-    public RecyclerAdapterMenu.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerAdapterOfferedMenu.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_items, parent, false);
         return new MyViewHolder(itemView).linkAdapter(this);
 
