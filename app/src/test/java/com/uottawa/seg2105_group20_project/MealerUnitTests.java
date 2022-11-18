@@ -10,6 +10,10 @@ import android.widget.Toast;
 public class MealerUnitTests {
 
     /**
+     * HELPER METHODS
+     */
+
+    /**
      * Generates list of clients that act as a database.
      * @return databaseClient
      */
@@ -130,6 +134,10 @@ public class MealerUnitTests {
         return cook;
     }
 
+    /**
+     * DELIVERABLE 2 UNIT TESTS
+     */
+
     @Test
     public void checkExistingClient(){
         List<Client> clientDB = generateClientDB();
@@ -239,5 +247,9 @@ public class MealerUnitTests {
         assertEquals(address, client.address);
         assertEquals(creditCard, client.creditCardNumber);
     }
+
+    /**
+     * DELIVERABLE 3 UNIT TESTS
+     */
 
 }
