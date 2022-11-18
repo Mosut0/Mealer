@@ -27,26 +27,26 @@ public class RecyclerAdapterOfferedMenu extends RecyclerView.Adapter<RecyclerAda
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        private final TextView mealNameText;
-        private final TextView mealTypeText;
-        private final TextView cuisineTypeText;
-        private final TextView ingredientsText;
-        private final TextView allergensText;
-        private final TextView priceText;
-        private final TextView descriptionText;
+        private final TextView mealNameOText;
+        private final TextView mealTypeOText;
+        private final TextView cuisineTypeOText;
+        private final TextView ingredientsOText;
+        private final TextView allergensOText;
+        private final TextView priceOText;
+        private final TextView descriptionOText;
         private RecyclerAdapterOfferedMenu adapter;
 
         DatabaseReference dbMenu;
 
         public MyViewHolder(final View view){
             super(view);
-            mealNameText = view.findViewById(R.id.mealNameText);
-            mealTypeText = view.findViewById(R.id.mealTypeText);
-            cuisineTypeText = view.findViewById(R.id.cuisineTypeText);
-            ingredientsText = view.findViewById(R.id.ingredientsText);
-            allergensText = view.findViewById(R.id.allergensText);
-            priceText = view.findViewById(R.id.priceText);
-            descriptionText = view.findViewById(R.id.descriptionText);
+            mealNameOText = view.findViewById(R.id.mealNameOText);
+            mealTypeOText = view.findViewById(R.id.mealTypeOText);
+            cuisineTypeOText = view.findViewById(R.id.cuisineTypeOText);
+            ingredientsOText = view.findViewById(R.id.ingredientsOText);
+            allergensOText = view.findViewById(R.id.allergensOText);
+            priceOText = view.findViewById(R.id.priceOText);
+            descriptionOText = view.findViewById(R.id.descriptionOText);
 
             dbMenu = FirebaseDatabase.getInstance().getReference("meals").child(cookID);
 
@@ -85,15 +85,15 @@ public class RecyclerAdapterOfferedMenu extends RecyclerView.Adapter<RecyclerAda
         String mealPrice = menuList.get(position).getPrice();
         String mealDescription = menuList.get(position).getDescription();
 
-        holder.mealNameText.setText(Html.fromHtml("<b>" + "Name: " + "</b>" + mealName));
-        holder.mealTypeText.setText(Html.fromHtml("<b>" + "Meal Type: " + "</b>" + mealType));
-        holder.cuisineTypeText.setText(Html.fromHtml("<b>" + "Cuisine Type: " + "</b>" + cuisineType));
+        holder.mealNameOText.setText(Html.fromHtml("<b>" + "Name: " + "</b>" + mealName));
+        holder.mealTypeOText.setText(Html.fromHtml("<b>" + "Meal Type: " + "</b>" + mealType));
+        holder.cuisineTypeOText.setText(Html.fromHtml("<b>" + "Cuisine Type: " + "</b>" + cuisineType));
 
-        holder.ingredientsText.setText(Html.fromHtml("<b>" + "Ingredients: " + "</b>" + mealIngredients));
-        holder.allergensText.setText(Html.fromHtml("<b>" + "Allergens: " + "</b>" + mealAllergens));
-        holder.priceText.setText(Html.fromHtml("<b>" + "Price: " + "</b>" + mealPrice + "$"));
+        holder.ingredientsOText.setText(Html.fromHtml("<b>" + "Ingredients: " + "</b>" + mealIngredients));
+        holder.allergensOText.setText(Html.fromHtml("<b>" + "Allergens: " + "</b>" + mealAllergens));
+        holder.priceOText.setText(Html.fromHtml("<b>" + "Price: " + "</b>" + mealPrice + "$"));
 
-        holder.descriptionText.setText(Html.fromHtml("<b>" + "Description: " + "</b>" + mealDescription));
+        holder.descriptionOText.setText(Html.fromHtml("<b>" + "Description: " + "</b>" + mealDescription));
     }
 
     @Override
