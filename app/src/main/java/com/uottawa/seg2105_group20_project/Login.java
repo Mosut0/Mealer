@@ -123,13 +123,9 @@ public class Login extends Activity {
         for (int i=0; i<cookList.size(); i++){
             if (cookList.get(i).email.trim().equals(Email) && cookList.get(i).password.trim().equals(Password)){
                 loginFound = true;
-                if(!cookList.get(i).suspension.equals("Active")){
-                    Toast.makeText(this, cookList.get(i).suspension, Toast.LENGTH_LONG).show();
-                    return;
-                }else {
-                    Intent j = new Intent(this, welcomeCook.class);
-                    startActivity(j);
-                }
+                Intent j = new Intent(this, welcomeCook.class);
+                j.putExtra("CookID", cookList.get(i).id);
+                startActivity(j);
             };
         }
         if (!loginFound){

@@ -6,14 +6,14 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/complaineeText"
+        android:id="@+id/mealNameText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/complainee"
-        app:layout_constraintBottom_toTopOf="@+id/complainantText"
+        app:layout_constraintBottom_toTopOf="@+id/cuisineTypeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,13 +31,13 @@
         app:layout_constraintBottom_toTopOf="@+id/complainantUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/complaineeText"
+        app:layout_constraintStart_toEndOf="@+id/mealNameText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:visibility="gone" />
 
     <TextView
-        android:id="@+id/complainantText"
+        android:id="@+id/cuisineTypeText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -45,14 +45,14 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="12dp"
         android:text="@string/complainant"
-        app:layout_constraintBottom_toTopOf="@+id/complaintDescriptionText"
+        app:layout_constraintBottom_toTopOf="@+id/ingredientsText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complaineeIDText" />
+        app:layout_constraintTop_toBottomOf="@+id/mealTypeText" />
 
     <TextView
-        android:id="@+id/complaintDescriptionText"
+        android:id="@+id/ingredientsText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complainantText" />
+        app:layout_constraintTop_toBottomOf="@+id/cuisineTypeText" />
 
     <Button
         android:id="@+id/complaintSuspendBtn"
@@ -71,13 +71,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
         android:text="@string/suspend"
-        app:layout_constraintBottom_toTopOf="@+id/banBtn"
+        app:layout_constraintBottom_toTopOf="@+id/addOfferedBtn"
         app:layout_constraintStart_toEndOf="@+id/suspensionTimeInput"
-        app:layout_constraintTop_toBottomOf="@id/complaintDescriptionText"
+        app:layout_constraintTop_toBottomOf="@id/ingredientsText"
         app:layout_constraintVertical_bias="0.709" />
 
     <Button
-        android:id="@+id/banBtn"
+        android:id="@+id/addOfferedBtn"
         android:layout_width="101dp"
         android:layout_height="47dp"
         android:layout_marginStart="17dp"
@@ -85,7 +85,7 @@
         android:layout_marginBottom="28dp"
         android:text="BAN"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/complaintDismissBtn"
+        app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/suspensionTimeInput" />
 
@@ -116,10 +116,10 @@
         android:text="@string/suspension_time"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complaintDescriptionText" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsText" />
 
     <Button
-        android:id="@+id/complaintDismissBtn"
+        android:id="@+id/deleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -130,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/suspensionTimeInput"
-        app:layout_constraintTop_toBottomOf="@+id/complaintDescriptionText"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsText"
         app:layout_constraintVertical_bias="0.909" />
 
     <TextView
@@ -144,7 +144,7 @@
         app:layout_constraintBottom_toTopOf="@+id/complaintDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/complainantText"
+        app:layout_constraintStart_toEndOf="@+id/cuisineTypeText"
         tools:visibility="gone" />
 
     <TextView
@@ -157,11 +157,11 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/complaintDescriptionText"
+        app:layout_constraintStart_toEndOf="@+id/ingredientsText"
         tools:visibility="gone" />
 
     <TextView
-        android:id="@+id/complaineeIDText"
+        android:id="@+id/mealTypeText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -169,9 +169,9 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:text="@string/complainee_id"
-        app:layout_constraintBottom_toTopOf="@+id/complainantText"
+        app:layout_constraintBottom_toTopOf="@+id/cuisineTypeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complaineeText" />
+        app:layout_constraintTop_toBottomOf="@+id/mealNameText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

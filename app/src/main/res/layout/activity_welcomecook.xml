@@ -42,13 +42,33 @@
         android:layout_marginEnd="176dp"
         android:text="@string/status_nsuspended_for_99d_99h_99m"
         android:textColor="@color/white"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logOutButtonCook"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.953"
-        tools:ignore="TextContrastCheck"
-        tools:visibility="invisible" />
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/mealListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:text="@string/view_meals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/welcomeTextCook" />
+
+    <Button
+        android:id="@+id/offeredMealListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/view_offered_meals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealListButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

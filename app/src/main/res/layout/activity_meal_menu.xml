@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MealMenu"
     android:background="@android:color/holo_purple">
 
     <TextView
-        android:id="@+id/listComplaintsText"
+        android:id="@+id/listMenutext"
         android:layout_width="389dp"
         android:layout_height="55dp"
-        android:text="@string/list_of_complaints"
+        android:text="@string/menu"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="40sp"
@@ -21,25 +22,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.053" />
 
-
     <Button
-        android:id="@+id/complaintsBackBtn"
-        android:layout_width="143dp"
-        android:layout_height="58dp"
+        android:id="@+id/menuBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addMenuItemBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="99dp"
+        android:text="Add Item"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewMenu"
         android:layout_width="409dp"
-        android:layout_height="553dp"
-        app:layout_constraintBottom_toTopOf="@+id/complaintsBackBtn"
+        android:layout_height="666dp"
+        app:layout_constraintBottom_toTopOf="@+id/addMenuItemBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listComplaintsText"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toBottomOf="@+id/listMenutext" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

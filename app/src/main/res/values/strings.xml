@@ -51,4 +51,15 @@
     <string name="welcome_you_are_logged_in_as_client">Welcome! You are logged in as Client</string>
     <string name="status_nsuspended_for_99d_99h_99m">Status:\nSuspended for 99D 99H 99M</string>
     <string name="welcome_you_are_logged_in_as_cook">Welcome! You are logged in as Cook</string>
+    <string name="view_meals">View Meals</string>
+    <string name="view_offered_meals">View Offered Meals</string>
+    <string name="menu">Menu</string>
+    <string name="name">Name</string>
+    <string name="meal_type">Meal Type</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="cuisine_type">Cuisine Type</string>
+    <string name="allergens">Allergens</string>
+    <string name="price">Price</string>
+    <string name="offer">Offer</string>
+    <string name="delete">Delete</string>
 </resources>

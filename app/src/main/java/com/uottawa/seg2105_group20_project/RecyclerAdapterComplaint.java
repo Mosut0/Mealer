@@ -1,7 +1,6 @@
 package com.uottawa.seg2105_group20_project;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.text.*;
 import android.view.ViewGroup;
 
@@ -10,20 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.widget.*;
 import android.view.*;
 
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ServerValue;
-
-import org.w3c.dom.Text;
 
 import java.util.*;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class RecyclerAdapterComplaint extends RecyclerView.Adapter<RecyclerAdapterComplaint.MyViewHolder> {
 
     private List<Complaint> complaintList;
 
-    public RecyclerAdapter(List<Complaint> complaintList){
+    public RecyclerAdapterComplaint(List<Complaint> complaintList){
         this.complaintList = complaintList;
     }
 
@@ -32,7 +27,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         private final TextView complaineeIDText;
         private final TextView complainantText;
         private final TextView complaintDescriptionText;
-        private RecyclerAdapter adapter;
+        private RecyclerAdapterComplaint adapter;
 
         DatabaseReference dbComplaints;
         DatabaseReference dbCooks;
@@ -41,16 +36,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         public MyViewHolder(final View view){
             super(view);
-            complaineeText = view.findViewById(R.id.complaineeText);
-            complainantText = view.findViewById(R.id.complainantText);
-            complaineeIDText = view.findViewById(R.id.complaineeIDText);
-            complaintDescriptionText = view.findViewById(R.id.complaintDescriptionText);
+            complaineeText = view.findViewById(R.id.mealNameText);
+            complainantText = view.findViewById(R.id.cuisineTypeText);
+            complaineeIDText = view.findViewById(R.id.mealTypeText);
+            complaintDescriptionText = view.findViewById(R.id.ingredientsText);
             suspensionInput = (EditText) view.findViewById(R.id.suspensionTimeInput);
 
             dbComplaints = FirebaseDatabase.getInstance().getReference("complaints");
             dbCooks = FirebaseDatabase.getInstance().getReference("cooks");
 
-            view.findViewById(R.id.complaintDismissBtn).setOnClickListener(itemView -> {
+            view.findViewById(R.id.deleteBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
                 adapter.complaintList.remove(adapterPosition);
@@ -80,7 +75,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
                 }
             });
 
-            view.findViewById(R.id.banBtn).setOnClickListener(itemView -> {
+            view.findViewById(R.id.addOfferedBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 String cookID = (String) dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get().getResult().getValue();
                 dbCooks.child(cookID).child("suspension").setValue("Banned");
@@ -93,14 +88,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         }
 
-        public MyViewHolder linkAdapter(RecyclerAdapter adapter){
+        public MyViewHolder linkAdapter(RecyclerAdapterComplaint adapter){
             this.adapter = adapter;
             return this;
         }
     }
     @NonNull
     @Override
-    public RecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerAdapterComplaint.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.complaint_items, parent, false);
         return new MyViewHolder(itemView).linkAdapter(this);
 

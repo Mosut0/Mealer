@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -81,7 +80,7 @@ public class ComplaintsMenu extends AppCompatActivity {
 
     public void setAdapter(){
         System.out.println(complaintList.size());
-        RecyclerAdapter adapter = new RecyclerAdapter(complaintList);
+        RecyclerAdapterComplaint adapter = new RecyclerAdapterComplaint(complaintList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

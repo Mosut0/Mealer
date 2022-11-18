@@ -1,5 +1,7 @@
 package com.uottawa.seg2105_group20_project;
 
+import java.util.ArrayList;
+
 public class Complaint {
     private String complainee, complaineeID, complainant, description, dbId;
     private boolean reviewed;

@@ -183,7 +183,7 @@
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
-        android:id="@+id/cookBackBtn"
+        android:id="@+id/menuBackBtn"
         android:layout_width="92dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"

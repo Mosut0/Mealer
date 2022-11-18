@@ -15,6 +15,20 @@
         android:theme="@style/Theme.SEG2105_Group20_Project"
         tools:targetApi="31">
         <activity
+            android:name=".OfferedMealMenu"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MealMenu"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ComplaintsMenu"
             android:exported="false">
             <meta-data
