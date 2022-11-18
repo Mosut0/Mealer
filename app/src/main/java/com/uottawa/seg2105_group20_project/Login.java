@@ -124,7 +124,9 @@ public class Login extends Activity {
             if (cookList.get(i).email.trim().equals(Email) && cookList.get(i).password.trim().equals(Password)){
                 loginFound = true;
                 Intent j = new Intent(this, welcomeCook.class);
-                j.putExtra("CookID", cookList.get(i).id);
+                Bundle bundle = new Bundle();
+                bundle.putString("cookID", cookList.get(i).id.trim());
+                j.putExtras(bundle);
                 startActivity(j);
             };
         }

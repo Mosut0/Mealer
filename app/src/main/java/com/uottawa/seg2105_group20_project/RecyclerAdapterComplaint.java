@@ -36,16 +36,16 @@ public class RecyclerAdapterComplaint extends RecyclerView.Adapter<RecyclerAdapt
 
         public MyViewHolder(final View view){
             super(view);
-            complaineeText = view.findViewById(R.id.mealNameText);
-            complainantText = view.findViewById(R.id.cuisineTypeText);
-            complaineeIDText = view.findViewById(R.id.mealTypeText);
-            complaintDescriptionText = view.findViewById(R.id.ingredientsText);
+            complaineeText = view.findViewById(R.id.complaineeText);
+            complainantText = view.findViewById(R.id.complainantText);
+            complaineeIDText = view.findViewById(R.id.complaineeIDText);
+            complaintDescriptionText = view.findViewById(R.id.complaintDescriptionText);
             suspensionInput = (EditText) view.findViewById(R.id.suspensionTimeInput);
 
             dbComplaints = FirebaseDatabase.getInstance().getReference("complaints");
             dbCooks = FirebaseDatabase.getInstance().getReference("cooks");
 
-            view.findViewById(R.id.deleteBtn).setOnClickListener(itemView -> {
+            view.findViewById(R.id.complaintDismissBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
                 adapter.complaintList.remove(adapterPosition);
@@ -75,7 +75,7 @@ public class RecyclerAdapterComplaint extends RecyclerView.Adapter<RecyclerAdapt
                 }
             });
 
-            view.findViewById(R.id.addOfferedBtn).setOnClickListener(itemView -> {
+            view.findViewById(R.id.complaintBanBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 String cookID = (String) dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get().getResult().getValue();
                 dbCooks.child(cookID).child("suspension").setValue("Banned");

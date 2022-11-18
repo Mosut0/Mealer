@@ -21,9 +21,11 @@ import java.util.*;
 
 public class MealMenu extends AppCompatActivity {
 
-    DatabaseReference dbCooks;
-    List<Meal> menuList;
+    DatabaseReference dbMenu;
+    String cookID;
     RecyclerView recyclerViewMenu;
+
+    ArrayList<Meal> menuList;
 
     Button mealMenuBackBtn;
     Button addMealBtn;
@@ -32,9 +34,13 @@ public class MealMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_menu);
+
+        Bundle bundle = getIntent().getExtras();
+        cookID = bundle.getString("cookID");
+
         recyclerViewMenu = findViewById(R.id.recyclerViewMenu);
         menuList = new ArrayList<>();
-        dbCooks = FirebaseDatabase.getInstance().getReference("complaints");
+        dbMenu = FirebaseDatabase.getInstance().getReference("meals").child(cookID);
         mealMenuBackBtn = (Button) findViewById(R.id.menuBackBtn);
         addMealBtn = (Button) findViewById(R.id.addMenuItemBtn);
 
@@ -61,19 +67,16 @@ public class MealMenu extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        dbCooks.addValueEventListener(new ValueEventListener() {
+        dbMenu.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 menuList.clear();
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
-                    Cook cook = postSnapshot.getValue(Cook.class);
-                    if(cook != null) { //Don't remember why I added a reviewed attribute
-                        cook.setDbId(postSnapshot.getKey());
-                        menuList.add(complaint);
-                    }
+                    Meal meal = postSnapshot.getValue(Meal.class);
+                    assert meal != null;
+                    menuList.add(meal);
                 }
                 setAdapter();
-
             }
 
 
@@ -87,8 +90,7 @@ public class MealMenu extends AppCompatActivity {
     }
 
     public void setAdapter(){
-        System.out.println(menuList.size());
-        RecyclerAdapterMenu adapter = new RecyclerAdapterMenu(menuList);
+        RecyclerAdapterMenu adapter = new RecyclerAdapterMenu(menuList, getIntent().getExtras().getString("cookID"));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerViewMenu.setLayoutManager(layoutManager);
         recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
@@ -97,10 +99,17 @@ public class MealMenu extends AppCompatActivity {
 
     public void menuBackClick(){
         Intent i = new Intent(this, welcomeCook.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("cookID", cookID);
+        i.putExtras(bundle);
         startActivity(i);
     }
 
     public void addMenu(){
-
+        Intent i = new Intent(this, AddMeal.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("cookID", cookID);
+        i.putExtras(bundle);
+        startActivity(i);
     }
 }

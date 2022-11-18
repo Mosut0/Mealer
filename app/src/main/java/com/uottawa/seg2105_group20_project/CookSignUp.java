@@ -43,15 +43,15 @@ public class CookSignUp extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cooksignup);
-//
-        textFirstName = (EditText) findViewById(R.id.cookFirstName);
-        textLastName = (EditText) findViewById(R.id.cookLastName);
-        textEmail = (EditText) findViewById(R.id.cookEmailAddress);
-        textPassword = (EditText) findViewById(R.id.cookPassword);
-        textAddress = (EditText) findViewById(R.id.cookAddress);
-        textDescription = (EditText) findViewById(R.id.cookDescription);
-        buttonCookSignUp = (Button) findViewById(R.id.cookSignupBtn);
-        backBtn = (Button) findViewById(R.id.menuBackBtn);
+
+        textFirstName = (EditText) findViewById(R.id.firstNameInput);
+        textLastName = (EditText) findViewById(R.id.lastNameInput);
+        textEmail = (EditText) findViewById(R.id.cookEmailInput);
+        textPassword = (EditText) findViewById(R.id.cookPasswordInput);
+        textAddress = (EditText) findViewById(R.id.cookAddressInput);
+        textDescription = (EditText) findViewById(R.id.cookDescriptionInput);
+        buttonCookSignUp = (Button) findViewById(R.id.cookSignUpBtn);
+        backBtn = (Button) findViewById(R.id.cookSignUpBackBtn);
 
         btn2 = findViewById(R.id.cookVoidCheque);
         btn2.setOnClickListener(new View.OnClickListener(){
@@ -116,8 +116,9 @@ public class CookSignUp extends AppCompatActivity{
 
         if(!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(description) && voidChequeUploaded == true){
             String id = databaseCook.push().getKey();
+
             String voidCheque ="test";
-            Cook cook = new Cook(id, firstName, lastName, email, password, address, description, voidCheque);
+            Cook cook = new Cook(id, firstName, lastName, email, password, address, description, voidCheque, new ArrayList<>(), new ArrayList<>());
 
             databaseCook.child(id).setValue(cook);
 

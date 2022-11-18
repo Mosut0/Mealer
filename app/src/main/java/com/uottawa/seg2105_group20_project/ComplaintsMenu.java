@@ -44,10 +44,6 @@ public class ComplaintsMenu extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
 
     protected void onStart() {

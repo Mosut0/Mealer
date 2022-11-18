@@ -62,4 +62,7 @@
     <string name="price">Price</string>
     <string name="offer">Offer</string>
     <string name="delete">Delete</string>
+    <string name="add_meal">Add Meal</string>
+    <string name="add">Add</string>
+    <string name="ban">BAN</string>
 </resources>

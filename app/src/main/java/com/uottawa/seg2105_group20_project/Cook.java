@@ -10,7 +10,7 @@ public class Cook extends Account {
     private ArrayList<Meal> offeredMeals;
 
     public Cook(){} //Needed for compilation
-    public Cook(String id, String firstName, String lastName, String email, String password, String address, String description, String voidCheque) {
+    public Cook(String id, String firstName, String lastName, String email, String password, String address, String description, String voidCheque, ArrayList<Meal> meals, ArrayList<Meal> offeredMeals) {
 
         if ( firstName == null || lastName == null || email == null || password == null || address == null || description == null || voidCheque == null )
             throw new IllegalArgumentException( "One or more fields are empty!" );
@@ -24,8 +24,8 @@ public class Cook extends Account {
         this.voidCheque = voidCheque;
         this.id = id;
         this.suspension = "Active";
-        this.meals = null;
-        this.offeredMeals = null;
+        this.meals = meals;
+        this.offeredMeals = offeredMeals;
     }
 
     public ArrayList<Meal> getMeals() {

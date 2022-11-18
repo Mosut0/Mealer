@@ -42,13 +42,13 @@ public class MealerUnitTests {
     public static List<Cook> generateCookDB(){
         List<Cook> databaseCook = new ArrayList<>();
 
-        Cook cookTest1 = new Cook("test1", "test1", "test1", "test1", "test1", "test1", "test1", "test1");
-        Cook cookTest2 = new Cook("test2", "test2", "test2", "test2", "test2", "test2", "test2", "test2");
-        Cook cookTest3 = new Cook("test3", "test3", "test3", "test3", "test3", "test3", "test3", "test3");
-        Cook cookTest4 = new Cook("test4", "test4", "test4", "test4", "test4", "test4", "test4", "test4");
-        Cook cookTest5 = new Cook("test5", "test5", "test5", "test5", "test5", "test5", "test5", "test5");
-        Cook cookTest6 = new Cook("test6", "test6", "test6", "test6", "test6", "test6", "test6", "test6");
-        Cook cookTest7 = new Cook("test7", "test7", "test7", "test7", "test7", "test7", "test7", "test7");
+        Cook cookTest1 = new Cook("test1", "test1", "test1", "test1", "test1", "test1", "test1", "test1", new ArrayList<>(), new ArrayList<>());
+        Cook cookTest2 = new Cook("test2", "test2", "test2", "test2", "test2", "test2", "test2", "test2", new ArrayList<>(), new ArrayList<>());
+        Cook cookTest3 = new Cook("test3", "test3", "test3", "test3", "test3", "test3", "test3", "test3", new ArrayList<>(), new ArrayList<>());
+        Cook cookTest4 = new Cook("test4", "test4", "test4", "test4", "test4", "test4", "test4", "test4", new ArrayList<>(), new ArrayList<>());
+        Cook cookTest5 = new Cook("test5", "test5", "test5", "test5", "test5", "test5", "test5", "test5", new ArrayList<>(), new ArrayList<>());
+        Cook cookTest6 = new Cook("test6", "test6", "test6", "test6", "test6", "test6", "test6", "test6", new ArrayList<>(), new ArrayList<>());
+        Cook cookTest7 = new Cook("test7", "test7", "test7", "test7", "test7", "test7", "test7", "test7", new ArrayList<>(), new ArrayList<>());
 
         databaseCook.add(cookTest1);
         databaseCook.add(cookTest2);
@@ -125,7 +125,7 @@ public class MealerUnitTests {
         String description = getAlphaNumericString(10);
         String cheque = getAlphaNumericString(10);
 
-        Cook cook = new Cook(id, fName, lName, email, password, address, description, cheque);
+        Cook cook = new Cook(id, fName, lName, email, password, address, description, cheque, new ArrayList<>(), new ArrayList<>());
 
         return cook;
     }
@@ -149,7 +149,7 @@ public class MealerUnitTests {
     @Test
     public void checkExistingCook(){
         List<Cook> cookDB = generateCookDB();
-        Cook cookTest4 = new Cook("test4", "test4", "test4", "test4", "test4", "test4", "test4", "test4");
+        Cook cookTest4 = new Cook("test4", "test4", "test4", "test4", "test4", "test4", "test4", "test4", new ArrayList<>(), new ArrayList<>());
 
         boolean loginFound = false;
         for (int i=0; i<cookDB.size(); i++){
@@ -181,7 +181,7 @@ public class MealerUnitTests {
     @Test
     public void checkNonExistingCook(){
         List<Cook> cookDB = generateCookDB();
-        Cook cookTest4 = new Cook("test4", "test4", "test4", "test99", "test4", "test4", "test4", "test4");
+        Cook cookTest4 = new Cook("test4", "test4", "test4", "test99", "test4", "test4", "test4", "test4", new ArrayList<>(), new ArrayList<>());
 
         boolean loginFound = false;
         for (int i=0; i<cookDB.size(); i++){
@@ -205,7 +205,7 @@ public class MealerUnitTests {
         String description = getAlphaNumericString(10);
         String cheque = getAlphaNumericString(10);
 
-        Cook cook = new Cook(id, fName, lName, email, password, address, description, cheque);
+        Cook cook = new Cook(id, fName, lName, email, password, address, description, cheque, new ArrayList<>(), new ArrayList<>());
 
         assertEquals(id, cook.id);
         assertEquals(fName, cook.firstName);

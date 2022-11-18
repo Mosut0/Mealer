@@ -3,11 +3,12 @@ package com.uottawa.seg2105_group20_project;
 import java.util.ArrayList;
 
 public class Meal {
-    private String mealName, mealType, cuisineType, price, description, dbID;
-    private ArrayList<String> ingredients, allergens;
+    private String mealID, mealName, mealType, cuisineType, price, description, ingredients, allergens, cookID;
+    private boolean offered;
     public Meal(){}
 
-    public Meal(String mealName, String mealType, String cuisineType, String price, String description, ArrayList<String> ingredients, ArrayList<String> allergens, String dbID) {
+    public Meal(String mealID, String mealName, String mealType, String cuisineType, String ingredients, String allergens, String price, String description,   String cookID, boolean offered) {
+        this.mealID = mealID;
         this.mealName = mealName;
         this.mealType = mealType;
         this.cuisineType = cuisineType;
@@ -15,7 +16,8 @@ public class Meal {
         this.description = description;
         this.ingredients = ingredients;
         this.allergens = allergens;
-        this.dbID = dbID;
+        this.cookID = cookID;
+        this.offered = false;
     }
 
     public String getMealName() {
@@ -58,27 +60,43 @@ public class Meal {
         this.description = description;
     }
 
-    public ArrayList<String> getIngredients() {
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
-    public ArrayList<String> getAllergens() {
+    public String getAllergens() {
         return allergens;
     }
 
-    public void setAllergens(ArrayList<String> allergens) {
+    public void setAllergens(String allergens) {
         this.allergens = allergens;
     }
 
-    public String getDbID() {
-        return dbID;
+    public String getCookID() {
+        return cookID;
     }
 
-    public void setDbID(String dbID) {
-        this.dbID = dbID;
+    public void setCookID(String cookID) {
+        this.cookID = cookID;
+    }
+
+    public boolean isOffered() {
+        return offered;
+    }
+
+    public void setOffered(boolean offered) {
+        this.offered = offered;
+    }
+
+    public String getMealID() {
+        return mealID;
+    }
+
+    public void setMealID(String mealID) {
+        this.mealID = mealID;
     }
 }
