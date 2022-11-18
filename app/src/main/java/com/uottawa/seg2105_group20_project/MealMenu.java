@@ -74,7 +74,8 @@ public class MealMenu extends AppCompatActivity {
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
                     Meal meal = postSnapshot.getValue(Meal.class);
                     assert meal != null;
-                    menuList.add(meal);
+                    if(!meal.isOffered())
+                        menuList.add(meal);
                 }
                 setAdapter();
             }
