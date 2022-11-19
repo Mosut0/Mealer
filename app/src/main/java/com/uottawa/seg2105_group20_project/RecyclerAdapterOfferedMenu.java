@@ -69,7 +69,7 @@ public class RecyclerAdapterOfferedMenu extends RecyclerView.Adapter<RecyclerAda
     @NonNull
     @Override
     public RecyclerAdapterOfferedMenu.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_items, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.offered_menu_items, parent, false);
         return new MyViewHolder(itemView).linkAdapter(this);
 
     }

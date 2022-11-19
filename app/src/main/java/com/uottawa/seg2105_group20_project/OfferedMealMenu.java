@@ -23,11 +23,11 @@ public class OfferedMealMenu extends AppCompatActivity {
 
     DatabaseReference dbMenu;
     String cookID;
-    RecyclerView recyclerViewMenu;
+    RecyclerView recyclerViewOMenu;
 
     ArrayList<Meal> offeredMenuList;
 
-    Button mealMenuBackBtn;
+    Button mealOMenuBackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +37,12 @@ public class OfferedMealMenu extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         cookID = bundle.getString("cookID");
 
-        recyclerViewMenu = findViewById(R.id.recyclerViewMenu);
+        recyclerViewOMenu = findViewById(R.id.recyclerViewOMenu);
         offeredMenuList = new ArrayList<>();
         dbMenu = FirebaseDatabase.getInstance().getReference("meals").child(cookID);
-        mealMenuBackBtn = (Button) findViewById(R.id.menuBackBtn);
+        mealOMenuBackBtn = (Button) findViewById(R.id.oMenuBackBtn);
 
-        mealMenuBackBtn.setOnClickListener(new View.OnClickListener() {
+        mealOMenuBackBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -80,9 +80,9 @@ public class OfferedMealMenu extends AppCompatActivity {
     public void setAdapter(){
         RecyclerAdapterOfferedMenu adapter = new RecyclerAdapterOfferedMenu(offeredMenuList, getIntent().getExtras().getString("cookID"));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerViewMenu.setLayoutManager(layoutManager);
-        recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewMenu.setAdapter(adapter);
+        recyclerViewOMenu.setLayoutManager(layoutManager);
+        recyclerViewOMenu.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewOMenu.setAdapter(adapter);
     }
 
     public void menuBackClick(){
