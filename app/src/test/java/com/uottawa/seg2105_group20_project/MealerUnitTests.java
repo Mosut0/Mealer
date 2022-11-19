@@ -111,6 +111,14 @@ public class MealerUnitTests {
         Complaint complaintTest6 = new Complaint("test6", "test6", "test6", "test6");
         Complaint complaintTest7 = new Complaint("test7", "test7", "test7", "test7");
 
+        databaseComplaint.add(complaintTest1);
+        databaseComplaint.add(complaintTest2);
+        databaseComplaint.add(complaintTest3);
+        databaseComplaint.add(complaintTest4);
+        databaseComplaint.add(complaintTest5);
+        databaseComplaint.add(complaintTest6);
+        databaseComplaint.add(complaintTest7);
+
         return databaseComplaint;
     }
 
@@ -348,7 +356,7 @@ public class MealerUnitTests {
 
         boolean mealFound = false;
         for (int i=0; i<mealDB.size(); i++){
-            if (mealDB.get(i).getMealID().trim().equals(mealDB.get(i).getMealID()) && mealDB.get(i).getMealName().trim().equals(mealDB.get(i).getMealName())){
+            if (mealDB.get(i).getMealID().trim().equals(mealTest4.getMealID())){
                 mealFound = true;
                 break;
             };
@@ -360,11 +368,11 @@ public class MealerUnitTests {
     @Test
     public void checkNonExistingMeal() {
         List<Meal> mealDB = generateMealDB();
-        Meal mealTest4 = new Meal("test4", "test4", "test4", "test77", "test4", "test4", "test4", "test4", "test4", true);
+        Meal mealTest4 = new Meal("test9999", "test4", "test4", "test77", "test4", "test4", "test4", "test4", "test4", true);
 
         boolean mealFound = false;
         for (int i = 0; i < mealDB.size(); i++) {
-            if (mealDB.get(i).getMealID().trim().equals(mealDB.get(i).getMealID()) && mealDB.get(i).getMealName().trim().equals(mealDB.get(i).getMealName())) {
+            if (mealDB.get(i).getMealID().trim().equals(mealTest4.getMealID())) {
                 mealFound = true;
                 break;
             }
@@ -397,9 +405,9 @@ public class MealerUnitTests {
 
         boolean complaintFound = false;
         for (int i=0; i<complaintDB.size(); i++){
-                if (complaintDB.get(i).getComplainee().trim().equals(complaintDB.get(i).getComplainee()) && complaintDB.get(i).getComplaineeID().trim().equals(complaintDB.get(i).getComplaineeID())){
-                complaintFound = true;
-                break;
+                if (complaintDB.get(i).getComplaineeID().trim().equals(complaintTest4.getComplaineeID())){
+                    complaintFound = true;
+                    break;
             };
         }
         assertTrue(complaintFound);
@@ -413,7 +421,7 @@ public class MealerUnitTests {
 
         boolean complaintFound = false;
         for (int i=0; i<complaintDB.size(); i++){
-            if (complaintDB.get(i).getComplainee().trim().equals(complaintDB.get(i).getComplainee()) && complaintDB.get(i).getComplaineeID().trim().equals(complaintDB.get(i).getComplaineeID())){
+            if (complaintDB.get(i).getComplainee().trim().equals(complaintTest4.getComplainee())){
                 complaintFound = true;
                 break;
             };
