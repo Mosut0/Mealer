@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class welcomeCook extends Activity{
 
@@ -82,6 +83,7 @@ public class welcomeCook extends Activity{
                     assert cook != null;
                     if(cook.id.equals(cookID)){
                         cookStatusText.setText("Status:\n" + cook.suspension);
+                        //ADD HERE
                         break;
                     }
                 }
