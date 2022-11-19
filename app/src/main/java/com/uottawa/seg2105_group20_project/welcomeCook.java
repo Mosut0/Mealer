@@ -83,7 +83,9 @@ public class welcomeCook extends Activity{
                     assert cook != null;
                     if(cook.id.equals(cookID)){
                         cookStatusText.setText("Status:\n" + cook.suspension);
-                        //ADD HERE
+                        if(!cook.suspension.equals("Active"))
+                            viewMenuBtn.setVisibility(View.INVISIBLE);
+                            viewOfferedMenuBtn.setVisibility(View.INVISIBLE);
                         break;
                     }
                 }
