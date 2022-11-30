@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_purple">
+    android:background="@android:color/white">
 
     <TextView
         android:id="@+id/welcomeTextClient"
@@ -11,7 +11,7 @@
         android:layout_height="346dp"
         android:text="@string/welcome_you_are_logged_in_as_client"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="55sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,10 +21,25 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <Button
+        android:id="@+id/purchases"
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/green"
+        android:text="view purchases"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/welcomeTextClient"
+        tools:layout_editor_absoluteY="438dp"
+        tools:visibility="visible" />
+
+    <Button
         android:id="@+id/logOutButtonClient"
         android:layout_width="143dp"
         android:layout_height="58dp"
         android:text="@string/log_out"
+        android:backgroundTint="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

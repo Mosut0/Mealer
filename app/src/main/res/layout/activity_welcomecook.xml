@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_purple">
+    android:background="@android:color/white">
 
     <TextView
         android:id="@+id/welcomeTextCook"
@@ -12,7 +12,7 @@
         android:layout_height="346dp"
         android:text="@string/welcome_you_are_logged_in_as_cook"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="55sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,6 +26,7 @@
         android:layout_width="143dp"
         android:layout_height="58dp"
         android:text="@string/log_out"
+        android:backgroundTint="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="176dp"
         android:text="@string/status_nsuspended_for_99d_99h_99m"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logOutButtonCook"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,20 +53,21 @@
 
     <Button
         android:id="@+id/mealListButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_width="137dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="@color/green"
         android:text="@string/view_meals"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/welcomeTextCook" />
 
     <Button
         android:id="@+id/offeredMealListButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="214dp"
+        android:layout_height="59dp"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
         android:text="@string/view_offered_meals"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_purple"
+    android:background="@android:color/white"
+
     tools:context=".CookSignUp">
 
 
@@ -18,7 +19,7 @@
         android:layout_marginBottom="25dp"
         android:gravity="center"
         android:text="@string/cook_sign_up"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
 
@@ -31,6 +32,7 @@
         android:layout_marginTop="-10dp"
         android:layout_marginEnd="10dp"
         android:text="@string/personal_information"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         tools:ignore="TextContrastCheck" />
@@ -44,16 +46,17 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/first_name"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -65,16 +68,17 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/last_name"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -86,16 +90,17 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_alternate_email_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/email_address"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -107,16 +112,17 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_password_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -124,22 +130,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/cookPasswordInput"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_house_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/address"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
 
@@ -152,15 +160,16 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_description_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/describe_yourself"
         android:importantForAutofill="no"
         android:inputType="text"
         android:padding="30dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -171,7 +180,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:backgroundTint="@color/green"
         android:text="@string/add_void_cheque" />
 
     <Button
@@ -183,7 +192,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:backgroundTint="@color/green"
         android:text="@string/sign_up"
         android:textSize="25sp"
         tools:ignore="DuplicateSpeakableTextCheck" />
@@ -196,6 +205,8 @@
         android:layout_marginTop="680dp"
         android:layout_marginEnd="320dp"
         android:layout_marginBottom="10dp"
-        android:text="@string/back" />
+        android:backgroundTint="@color/black"
+        android:text="@string/back"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

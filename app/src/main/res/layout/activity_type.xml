@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_purple"
+    android:background="@android:color/white"
     tools:context=".Type">
 
     <TextView
@@ -14,7 +14,7 @@
         android:text="@string/select_a_role"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         android:layout_height="84dp"
         android:layout_marginTop="324dp"
         android:text="@string/client"
-        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:backgroundTint="@color/green"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -42,7 +42,7 @@
         android:layout_width="230dp"
         android:layout_height="84dp"
         android:text="@string/cook"
-        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:backgroundTint="@color/green"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +59,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:text="@string/back"
+        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"

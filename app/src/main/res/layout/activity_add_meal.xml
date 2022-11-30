@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_purple"
+    android:background="@android:color/white"
     tools:context=".AddMeal">
 
 
@@ -19,16 +19,17 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
-        android:drawableStart="@drawable/ic_baseline_fastfood_24"
+        android:background="#30cccccc"
+        android:drawableStart="@drawable/peanuts"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/allergens"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <TextView
@@ -41,7 +42,7 @@
         android:layout_marginBottom="25dp"
         android:gravity="center"
         android:text="@string/add_meal"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
 
@@ -54,16 +55,17 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
-        android:drawableStart="@drawable/ic_baseline_fastfood_24"
+        android:background="#30cccccc"
+        android:drawableStart="@drawable/fork_and_spoon"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/name"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -75,16 +77,17 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_fastfood_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/meal_type"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -96,16 +99,17 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_fastfood_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/cuisine_type"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -117,16 +121,17 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
-        android:drawableStart="@drawable/ic_baseline_fastfood_24"
+        android:background="#30cccccc"
+        android:drawableStart="@drawable/salt3"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/ingredients"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
 
@@ -141,16 +146,17 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_attach_money_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/price"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <EditText
@@ -162,15 +168,16 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
+        android:background="#30cccccc"
         android:drawableStart="@drawable/ic_baseline_description_24"
+        android:drawableTint="@color/green"
         android:drawablePadding="20dp"
         android:hint="@string/description"
         android:importantForAutofill="no"
         android:inputType="text"
         android:padding="30dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -182,7 +189,7 @@
         android:layout_marginTop="46dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/material_dynamic_secondary20"
+        android:backgroundTint="@color/green"
         android:text="@string/add"
         android:textSize="25sp"
         tools:ignore="DuplicateSpeakableTextCheck" />
@@ -191,6 +198,7 @@
         android:id="@+id/menuBackBtn"
         android:layout_width="92dp"
         android:layout_height="48dp"
+        android:backgroundTint="@color/black"
         android:layout_marginStart="10dp"
         android:layout_marginTop="680dp"
         android:layout_marginEnd="320dp"
