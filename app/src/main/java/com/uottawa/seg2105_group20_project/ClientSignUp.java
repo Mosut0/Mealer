@@ -32,6 +32,8 @@ public class ClientSignUp extends Activity{
     EditText editPassword;
     EditText textAddress;
     EditText textCreditCardNumber;
+    EditText textCVV;
+    EditText textExpiry;
 
     Button buttonClientSignUp;
     Button buttonClientBack;
@@ -51,6 +53,8 @@ public class ClientSignUp extends Activity{
         editPassword = (EditText) findViewById(R.id.clientPassword);
         textAddress = (EditText) findViewById(R.id.clientAddress);
         textCreditCardNumber = (EditText) findViewById(R.id.clientCreditCardInfo);
+        textCVV = (EditText) findViewById(R.id.CVV);
+        textExpiry = (EditText) findViewById(R.id.expiryDate);
         buttonClientSignUp = (Button) findViewById(R.id.clientSignupBtn);
         buttonClientBack = (Button) findViewById(R.id.clientBackBtn);
         clients = new ArrayList<>();
@@ -102,11 +106,13 @@ public class ClientSignUp extends Activity{
         String password = editPassword.getText().toString().trim();
         String address = textAddress.getText().toString().trim();
         String creditCardNumber = textCreditCardNumber.getText().toString().trim();
+        String cvv = textCVV.getText().toString().trim();
+        String expiry = textExpiry.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(creditCardNumber)){
+        if(!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(creditCardNumber)&& !TextUtils.isEmpty(cvv) && !TextUtils.isEmpty(expiry)){
             String id = databaseClient.push().getKey();
 
-            Client client = new Client(id, firstName, lastName, email, password, address, creditCardNumber);
+            Client client = new Client(id, firstName, lastName, email, password, address, creditCardNumber, cvv, expiry);
 
             databaseClient.child(id).setValue(client);
 

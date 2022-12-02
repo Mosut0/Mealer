@@ -84,7 +84,6 @@
         android:ems="10"
         android:hint="@string/days_hours_minutes"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="@color/black"
         android:textSize="12sp"

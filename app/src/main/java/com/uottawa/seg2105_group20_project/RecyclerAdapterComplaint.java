@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.widget.*;
 import android.view.*;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -59,16 +61,23 @@ public class RecyclerAdapterComplaint extends RecyclerView.Adapter<RecyclerAdapt
                 try{
                     int adapterPosition = getAdapterPosition();
                     String[] suspensionTime = suspensionInput.getText().toString().split("/");
+                    System.out.println(suspensionTime[0]);
+                    System.out.println(suspensionTime[1]);
+                    System.out.println(suspensionTime[2]);
                     int days = Integer.parseInt(suspensionTime[0]);
                     int hours = Integer.parseInt(suspensionTime[1]);
                     int minutes = Integer.parseInt(suspensionTime[2]);
                     if(days >= 0 && hours >= 0 && minutes >= 0){
-                        String cookID = (String) dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get().getResult().getValue();
-                        dbCooks.child(cookID).child("suspension").setValue("Suspended for: " + days + "D " + hours + "H " + minutes + "M");
-                        dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
-                        adapter.complaintList.remove(adapterPosition);
-                        adapter.notifyItemChanged(adapterPosition);
-                        Toast.makeText(itemView.getContext(), "Cook Dismissed", Toast.LENGTH_LONG).show();
+                        Task<DataSnapshot> task = dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get();
+                        task.addOnSuccessListener(result -> {
+                           String cookID = (String) result.getValue();
+                            assert cookID != null;
+                            dbCooks.child(cookID).child("suspension").setValue("Suspended for: " + days + "D " + hours + "H " + minutes + "M");
+                            dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
+                            adapter.complaintList.remove(adapterPosition);
+                            adapter.notifyItemChanged(adapterPosition);
+                            Toast.makeText(itemView.getContext(), "Cook Suspended", Toast.LENGTH_LONG).show();
+                        });
                     }
                 } catch (Exception e){
                     Toast.makeText(view.getContext(), "Invalid Suspension Time", Toast.LENGTH_LONG).show();
@@ -77,6 +86,7 @@ public class RecyclerAdapterComplaint extends RecyclerView.Adapter<RecyclerAdapt
 
             view.findViewById(R.id.complaintBanBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
+                System.out.println((String) dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get().getResult().getValue());
                 String cookID = (String) dbComplaints.child(complaintList.get(adapterPosition).getDbId()).child("complaineeID").get().getResult().getValue();
                 dbCooks.child(cookID).child("suspension").setValue("Banned");
                 dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
