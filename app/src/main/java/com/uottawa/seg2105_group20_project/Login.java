@@ -80,6 +80,7 @@ public class Login extends Activity {
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
                     Client client = postSnapshot.getValue(Client.class);
                     clients.add(client);
+                    System.out.println(client.email);
                 }
             }
 
@@ -97,6 +98,8 @@ public class Login extends Activity {
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
                     Cook cook = postSnapshot.getValue(Cook.class);
                     cookList.add(cook);
+                    System.out.println(cook.email);
+
                 }
             }
 

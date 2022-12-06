@@ -53,8 +53,6 @@ public class RecyclerAdapterOfferedMenu extends RecyclerView.Adapter<RecyclerAda
             view.findViewById(R.id.unofferBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 dbMenu.child(menuList.get(adapterPosition).getMealID()).child("offered").setValue(false);
-                adapter.menuList.remove(adapterPosition);
-                adapter.notifyItemChanged(adapterPosition);
                 Toast.makeText(itemView.getContext(), "Meal Unoffered", Toast.LENGTH_LONG).show();
 
             });

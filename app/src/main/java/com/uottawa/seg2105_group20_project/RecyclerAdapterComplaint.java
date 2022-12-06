@@ -50,8 +50,6 @@ public class RecyclerAdapterComplaint extends RecyclerView.Adapter<RecyclerAdapt
             view.findViewById(R.id.complaintDismissBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
-                adapter.complaintList.remove(adapterPosition);
-                adapter.notifyItemChanged(adapterPosition);
                 Toast.makeText(itemView.getContext(), "Complaint Dismissed", Toast.LENGTH_LONG).show();
 
             });
@@ -74,8 +72,6 @@ public class RecyclerAdapterComplaint extends RecyclerView.Adapter<RecyclerAdapt
                             assert cookID != null;
                             dbCooks.child(cookID).child("suspension").setValue("Suspended for: " + days + "D " + hours + "H " + minutes + "M");
                             dbComplaints.child(complaintList.get(adapterPosition).getDbId()).removeValue();
-                            adapter.complaintList.remove(adapterPosition);
-                            adapter.notifyItemChanged(adapterPosition);
                             Toast.makeText(itemView.getContext(), "Cook Suspended", Toast.LENGTH_LONG).show();
                         });
                     }

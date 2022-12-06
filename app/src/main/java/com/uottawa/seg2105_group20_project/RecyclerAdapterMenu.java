@@ -51,8 +51,6 @@ public class RecyclerAdapterMenu extends RecyclerView.Adapter<RecyclerAdapterMen
             view.findViewById(R.id.deleteMealBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 dbMenu.child(menuList.get(adapterPosition).getMealID()).removeValue();
-                adapter.menuList.remove(adapterPosition);
-                adapter.notifyItemChanged(adapterPosition);
                 Toast.makeText(itemView.getContext(), "Menu Deleted", Toast.LENGTH_LONG).show();
 
             });
@@ -60,8 +58,6 @@ public class RecyclerAdapterMenu extends RecyclerView.Adapter<RecyclerAdapterMen
             view.findViewById(R.id.offerBtn).setOnClickListener(itemView -> {
                 int adapterPosition = getAdapterPosition();
                 dbMenu.child(menuList.get(adapterPosition).getMealID()).child("offered").setValue(true);
-                adapter.menuList.remove(adapterPosition);
-                adapter.notifyItemChanged(adapterPosition);
                 Toast.makeText(itemView.getContext(), "Meal Offered", Toast.LENGTH_LONG).show();
             });
 
