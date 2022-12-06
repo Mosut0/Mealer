@@ -9,17 +9,16 @@
     <TextView
         android:id="@+id/welcomeTextCook"
         android:layout_width="351dp"
-        android:layout_height="346dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/welcome_you_are_logged_in_as_cook"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="55sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/logOutButtonCook"
@@ -52,19 +51,8 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/mealListButton"
-        android:layout_width="137dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="224dp"
-        android:backgroundTint="@color/green"
-        android:text="@string/view_meals"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/welcomeTextCook" />
-
-    <Button
         android:id="@+id/offeredMealListButton"
-        android:layout_width="214dp"
+        android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/green"
@@ -75,4 +63,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mealListButton"
         tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/purchaseRequestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/view_purchase_requests"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offeredMealListButton"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/viewProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/view_profile"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseRequestButton"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/mealListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:layout_marginTop="75dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/view_meals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextCook" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

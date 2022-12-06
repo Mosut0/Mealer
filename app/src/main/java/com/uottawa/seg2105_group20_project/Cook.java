@@ -3,6 +3,8 @@ package com.uottawa.seg2105_group20_project;
 import java.util.ArrayList;
 
 public class Cook extends Account {
+    public int sales;
+    public double rating;
     public String description;
     public String voidCheque;
     public String suspension;
@@ -26,6 +28,8 @@ public class Cook extends Account {
         this.suspension = "Active";
         this.meals = meals;
         this.offeredMeals = offeredMeals;
+        this.sales = 0;
+        this.rating = 0;
     }
 
     public ArrayList<Meal> getMeals() {

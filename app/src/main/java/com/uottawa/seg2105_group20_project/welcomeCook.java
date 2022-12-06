@@ -22,7 +22,7 @@ import java.util.Objects;
 public class welcomeCook extends Activity{
 
 
-    Button logOutCookBtn, viewMenuBtn, viewOfferedMenuBtn;
+    Button logOutCookBtn, viewMenuBtn, viewOfferedMenuBtn, viewProfileBtn;
     TextView cookStatusText;
 
     DatabaseReference dbCooks;
@@ -41,6 +41,7 @@ public class welcomeCook extends Activity{
         logOutCookBtn = (Button) findViewById(R.id.logOutButtonCook);
         viewMenuBtn = (Button) findViewById(R.id.mealListButton);
         viewOfferedMenuBtn = (Button) findViewById(R.id.offeredMealListButton);
+        viewProfileBtn = (Button) findViewById(R.id.viewProfileButton);
         cookStatusText = (TextView) findViewById(R.id.cookStatusText);
 
         ((TextView) findViewById(R.id.cookStatusText)).setText("Status: " + suspension);
@@ -66,6 +67,14 @@ public class welcomeCook extends Activity{
             @Override
             public void onClick(View view) {
                 viewOfferedMenuClick();
+            }
+        });
+
+        viewProfileBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                viewProfileClick();
             }
         });
     }
@@ -114,6 +123,14 @@ public class welcomeCook extends Activity{
 
     public void viewOfferedMenuClick(){
         Intent i = new Intent(this, OfferedMealMenu.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("cookID", cookID);
+        i.putExtras(bundle);
+        startActivity(i);
+    }
+
+    public void viewProfileClick(){
+        Intent i = new Intent(this, CookProfile.class);
         Bundle bundle = new Bundle();
         bundle.putString("cookID", cookID);
         i.putExtras(bundle);

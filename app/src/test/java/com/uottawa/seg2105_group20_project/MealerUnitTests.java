@@ -22,13 +22,13 @@ public class MealerUnitTests {
     public static List<Client> generateClientDB(){
         List<Client> databaseClient = new ArrayList<>();
 
-        Client clientTest1 = new Client("test1", "test1", "test1", "test1", "test1", "test1", "4865848");
-        Client clientTest2 = new Client("test2", "test2", "test2", "test2", "test2", "test2", "4865848");
-        Client clientTest3 = new Client("test3", "test3", "test3", "test3", "test3", "test3", "4865848");
-        Client clientTest4 = new Client("test4", "test4", "test4", "test4", "test4", "test4", "4865848");
-        Client clientTest5 = new Client("test5", "test5", "test5", "test5", "test5", "test5", "4865848");
-        Client clientTest6 = new Client("test6", "test6", "test6", "test6", "test6", "test6", "4865848");
-        Client clientTest7 = new Client("test7", "test7", "test7", "test7", "test7", "test7", "4865848");
+        Client clientTest1 = new Client("test1", "test1", "test1", "test1", "test1", "test1", "4865848", "334", "3241");
+        Client clientTest2 = new Client("test2", "test2", "test2", "test2", "test2", "test2", "4865848", "333", "3421");
+        Client clientTest3 = new Client("test3", "test3", "test3", "test3", "test3", "test3", "4865848", "343", "3214");
+        Client clientTest4 = new Client("test4", "test4", "test4", "test4", "test4", "test4", "4865848", "333", "3241");
+        Client clientTest5 = new Client("test5", "test5", "test5", "test5", "test5", "test5", "4865848", "343", "3241");
+        Client clientTest6 = new Client("test6", "test6", "test6", "test6", "test6", "test6", "4865848", "343", "3241");
+        Client clientTest7 = new Client("test7", "test7", "test7", "test7", "test7", "test7", "4865848", "343", "3421");
 
         databaseClient.add(clientTest1);
         databaseClient.add(clientTest2);
@@ -166,8 +166,10 @@ public class MealerUnitTests {
         String password = getAlphaNumericString(10);
         String address = getAlphaNumericString(10);
         String creditCard = String.valueOf(randInt.nextInt(999999999));
+        String expiry = "3343";
+        String cvv = "321";
 
-        Client client = new Client(id, fName, lName, email, password, address, creditCard);
+        Client client = new Client(id, fName, lName, email, password, address, creditCard, cvv, expiry);
 
         return client;
     }
@@ -237,7 +239,7 @@ public class MealerUnitTests {
     @Test
     public void checkExistingClient(){
         List<Client> clientDB = generateClientDB();
-        Client clientTest4 = new Client("test4", "test4", "test4", "test4", "test4", "test4", "4865848");
+        Client clientTest4 = new Client("test4", "test4", "test4", "test4", "test4", "test4", "4865848", "345", "2344");
 
         boolean loginFound = false;
         for (int i=0; i<clientDB.size(); i++){
@@ -269,7 +271,7 @@ public class MealerUnitTests {
     @Test
     public void checkNonExistingClient(){
         List<Client> clientDB = generateClientDB();
-        Client clientTest4 = new Client("test4", "test4", "test4", "test4", "test99", "test4", "4865848");
+        Client clientTest4 = new Client("test4", "test4", "test4", "test4", "test99", "test4", "4865848", "334", "3241");
 
         boolean loginFound = false;
         for (int i=0; i<clientDB.size(); i++){
@@ -332,8 +334,10 @@ public class MealerUnitTests {
         String password = getAlphaNumericString(10);
         String address = getAlphaNumericString(10);
         String creditCard = String.valueOf(randInt.nextInt(999999999));
+        String expiry = "3343";
+        String cvv = "321";
 
-        Client client = new Client(id, fName, lName, email, password, address, creditCard);
+        Client client = new Client(id, fName, lName, email, password, address, creditCard, cvv, expiry);
 
         assertEquals(id, client.id);
         assertEquals(fName, client.firstName);

@@ -67,4 +67,8 @@
     <string name="ban">BAN</string>
     <string name="cook_offered_menu" />
     <string name="unoffer">Unoffer</string>
+    <string name="your_profile">Your Profile</string>
+    <string name="loading">Loading...</string>
+    <string name="view_purchase_requests">VIEW PURCHASE REQUESTS</string>
+    <string name="view_profile">VIEW PROFILE</string>
 </resources>
