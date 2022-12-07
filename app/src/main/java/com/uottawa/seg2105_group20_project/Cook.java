@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Cook extends Account {
     public int sales;
+    public int totalRatings;
     public double rating;
     public String description;
     public String voidCheque;
@@ -30,6 +31,7 @@ public class Cook extends Account {
         this.offeredMeals = offeredMeals;
         this.sales = 0;
         this.rating = 0;
+        this.totalRatings = 0;
     }
 
     public ArrayList<Meal> getMeals() {

@@ -7,11 +7,20 @@ public class Complaint {
     private boolean reviewed;
 
     public Complaint(){};
-    public Complaint(String complainee, String complaineeID, String complainant,String complaintDescription){
+    public Complaint(String complainee, String complaineeID, String complainant, String complaintDescription){
         this.complainee = complainee;
         this.complaineeID = complaineeID;
         this.complainant = complainant;
         this.description = complaintDescription;
+        this.reviewed = false;
+    }
+
+    public Complaint(String complainee, String complaineeID, String complainant, String complaintDescription, String dbId){
+        this.complainee = complainee;
+        this.complaineeID = complaineeID;
+        this.complainant = complainant;
+        this.description = complaintDescription;
+        this.dbId = dbId;
         this.reviewed = false;
     }
 

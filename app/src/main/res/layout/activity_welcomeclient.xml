@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/welcomeTextClient"
         android:layout_width="351dp"
-        android:layout_height="346dp"
+        android:layout_height="wrap_content"
         android:text="@string/welcome_you_are_logged_in_as_client"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -18,20 +18,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.003" />
 
     <Button
-        android:id="@+id/purchases"
+        android:id="@+id/viewPurchasesbtn"
         android:layout_width="200dp"
         android:layout_height="65dp"
+        android:layout_marginTop="100dp"
         android:backgroundTint="@color/green"
-        android:text="view purchases"
+        android:text="@string/view_purchases"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/welcomeTextClient"
-        tools:layout_editor_absoluteY="438dp"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextClient"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/searchMealBtn"
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/search_for_meal"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPurchasesbtn"
         tools:visibility="visible" />
 
     <Button
