@@ -18,5 +18,4 @@ import java.util.*;
 
 public class RecyclerViewClientPurchase extends RecyclerView.Adapter<RecyclerViewClientPurchase.MyViewHolder>{
 
-
 }
