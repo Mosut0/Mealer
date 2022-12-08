@@ -89,7 +89,7 @@
         android:layout_marginStart="156dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="157dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/green"
         android:text="@string/search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
