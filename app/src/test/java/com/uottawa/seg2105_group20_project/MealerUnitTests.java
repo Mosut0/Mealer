@@ -15,6 +15,24 @@ public class MealerUnitTests {
      * HELPER METHODS
      */
 
+    public static List<PurchaseRequest> generatePCDB(){
+        List<PurchaseRequest> pcDB = new ArrayList<>();
+
+        PurchaseRequest purchase1 = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+        PurchaseRequest purchase2 = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+        PurchaseRequest purchase3 = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+        PurchaseRequest purchase4 = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+        PurchaseRequest purchase5 = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+
+        pcDB.add(purchase1);
+        pcDB.add(purchase2);
+        pcDB.add(purchase3);
+        pcDB.add(purchase4);
+        pcDB.add(purchase5);
+
+        return pcDB;
+    }
+
     /**
      * Generates list of clients that act as a database.
      * @return databaseClient
@@ -431,6 +449,75 @@ public class MealerUnitTests {
             };
         }
         assertFalse(complaintFound);
+
+    }
+
+    /**
+     * DELIVERABLE 4 UNIT TESTS
+     */
+
+
+    @Test
+    public void checkPurchaseExists(){
+        List<Meal> mealDB = generateMealDB();
+        PurchaseRequest purchase = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+
+        boolean mealFound = false;
+        for (int i=0; i<mealDB.size(); i++){
+            if (mealDB.get(i).getMealID().trim().equals(purchase.mealId)){
+                mealFound = true;
+                break;
+            };
+        }
+        assertTrue(mealFound);
+
+    }
+
+    @Test
+    public void checkPurchaseExists2(){
+        List<Client> clients = generateClientDB();
+        PurchaseRequest purchase = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+
+        boolean mealFound = false;
+        for (int i=0; i<clients.size(); i++){
+            if (clients.get(i).id.trim().equals(purchase.cookId)){
+                mealFound = true;
+                break;
+            };
+        }
+        assertTrue(mealFound);
+
+    }
+
+    @Test
+    public void checkPurchaseExists3(){
+        List<Cook> cookDB = generateCookDB();
+        PurchaseRequest purchase = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+
+        boolean mealFound = false;
+        for (int i=0; i<cookDB.size(); i++){
+            if (cookDB.get(i).id.trim().equals(purchase.cookId)){
+                mealFound = true;
+                break;
+            };
+        }
+        assertTrue(mealFound);
+
+    }
+
+    @Test
+    public void checkPurchaseExists4(){
+        List<PurchaseRequest> pcDB = generatePCDB();
+        PurchaseRequest purchase = new PurchaseRequest("test4", "test4", "test4", "test4", "test4");
+
+        boolean mealFound = false;
+        for (int i=0; i<pcDB.size(); i++){
+            if (pcDB.get(i).id.trim().equals(purchase.id)){
+                mealFound = true;
+                break;
+            };
+        }
+        assertTrue(mealFound);
 
     }
 
